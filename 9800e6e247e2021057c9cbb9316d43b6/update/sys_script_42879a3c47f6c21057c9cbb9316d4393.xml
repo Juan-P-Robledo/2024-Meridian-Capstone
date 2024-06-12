@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>u_shows</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Check for Duplicate Scripts</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+    // Retrieve and process the name field of the current record
+    var currentName = current.u_name.toString().toLowerCase().replace(/\s+/g, '');
+	var currentSysID = current.sys_id.toString();
+
+    // Query the table for all existing records
+    var existingRecords = new GlideRecord('u_shows'); // Replace 'u_shows' with the actual table name
+    existingRecords.query();
+
+    // Loop through existing records
+    while (existingRecords.next()) {
+        // Retrieve and process the name field of the existing record
+        var existingName = existingRecords.u_name.toString().toLowerCase().replace(/\s+/g, '');
+		var existingSysID = existingRecords.sys_id.toString();
+
+        // Check if the names match
+        if (currentName == existingName && currentSysID !== existingSysID) {
+			//gs.addInfoMessage('Current sys_id: ' + currentSysID + ' Current Name: ' + currentName);
+			//gs.addInfoMessage('Duplicate sys_id: ' + existingSysID +' Duplicate Name: ' + existingName);
+            gs.addInfoMessage('Duplicate name found. Deleting the current record: ' + current.u_name);
+            current.deleteRecord(); // Delete the current record if a duplicate is found
+            return; // Exit the script after deleting the current record
+        }
+    }
+})(current, previous);
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-12 16:31:55</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>42879a3c47f6c21057c9cbb9316d4393</sys_id>
+        <sys_mod_count>17</sys_mod_count>
+        <sys_name>Check for Duplicate Scripts</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Show recommendations" source="9800e6e247e2021057c9cbb9316d43b6">9800e6e247e2021057c9cbb9316d43b6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Show recommendations">9800e6e247e2021057c9cbb9316d43b6</sys_scope>
+        <sys_update_name>sys_script_42879a3c47f6c21057c9cbb9316d4393</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-12 18:36:01</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=42879a3c47f6c21057c9cbb9316d4393"/>
+</record_update>
