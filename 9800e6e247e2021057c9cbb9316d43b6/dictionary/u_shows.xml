@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="b380aee64726021057c9cbb9316d438d" label="Shows" max_length="40" name="u_shows" type="collection">
-        <element choice="3" default="01" label="State" max_length="40" name="u_state" type="choice">
+        <element choice="3" default="1" label="State" max_length="40" name="u_state" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Paused Watching" sequence="1" value="02"/>
-                <element inactive_on_update="false" label="Currently Watching" sequence="2" value="03"/>
-                <element inactive_on_update="false" label="Finished Watching" sequence="3" value="04"/>
-                <element inactive_on_update="false" label="Not Started" sequence="0" value="01"/>
+                <element inactive_on_update="false" label="Currently Watching" sequence="2" value="3"/>
+                <element inactive_on_update="false" label="Finished Watching" sequence="3" value="4"/>
+                <element inactive_on_update="false" label="Not Started" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Paused Watching" sequence="1" value="2"/>
             </choice>
         </element>
         <element default="0000-00-00 00:00:00" label="Due date" max_length="40" name="u_due_date" type="due_date"/>
