@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_cubes">
+    <pa_cubes action="INSERT_OR_UPDATE">
+        <benchmarking>false</benchmarking>
+        <calendar>standard</calendar>
+        <calendar_freq/>
+        <conditions table="u_shows">u_state!=4<item display_value="Finished Watching" endquery="false" field="u_state" goto="false" newquery="false" operator="!=" or="false" value="4"/>
+        </conditions>
+        <description>Checks </description>
+        <facts_table>u_shows</facts_table>
+        <facts_table_pk/>
+        <facts_table_pktable/>
+        <facts_table_pkview/>
+        <frequency>20</frequency>
+        <max_record_fetch_count>50000</max_record_fetch_count>
+        <name>Shows.Active Weekly</name>
+        <override_record_collection>false</override_record_collection>
+        <report_source display_value="Active Show Recommendations (Shows)">39692dbe4776021057c9cbb9316d435a</report_source>
+        <report_source_updated_at>2024-06-19 01:27:42</report_source_updated_at>
+        <sys_class_name>pa_cubes</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-18 18:29:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>89bee57647b6021057c9cbb9316d43fa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Shows.Active Weekly</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Show recommendations" source="9800e6e247e2021057c9cbb9316d43b6">9800e6e247e2021057c9cbb9316d43b6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Show recommendations">9800e6e247e2021057c9cbb9316d43b6</sys_scope>
+        <sys_update_name>pa_cubes_89bee57647b6021057c9cbb9316d43fa</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-18 18:29:34</sys_updated_on>
+    </pa_cubes>
+    <sys_translated_text action="delete_multiple" query="documentkey=89bee57647b6021057c9cbb9316d43fa"/>
+</record_update>
