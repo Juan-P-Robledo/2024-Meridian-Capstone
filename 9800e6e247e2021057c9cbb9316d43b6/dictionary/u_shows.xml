@@ -8,8 +8,12 @@
                 <element inactive_on_update="false" label="Paused Watching" sequence="1" value="2"/>
             </choice>
         </element>
+        <element label="URL" max_length="200" name="u_url" read_only="true" type="string"/>
+        <element label="Show Image" max_length="65536" name="u_show_image" type="html"/>
         <element default="0000-00-00 00:00:00" label="Due date" max_length="40" name="u_due_date" type="due_date"/>
         <element label="Name" mandatory="true" max_length="40" name="u_name" type="string"/>
+        <element label="Origin Country" max_length="40" name="u_origin_country" read_only="true" type="string"/>
+        <element label="Adult Content" max_length="40" name="u_adult_content" read_only="true" type="string"/>
         <element label="Overview" max_length="1000" name="u_overview" read_only="true" type="string"/>
         <element choice="3" default="1" label="Urgency" max_length="40" name="u_urgency" type="choice">
             <choice>
@@ -19,5 +23,6 @@
             </choice>
         </element>
         <element default="0000/00/00" label="First Aired" max_length="40" name="u_first_aired" read_only="true" type="glide_date"/>
+        <element label="API Show Name " max_length="100" name="u_api_name" read_only="true" type="string"/>
     </element>
 </database>

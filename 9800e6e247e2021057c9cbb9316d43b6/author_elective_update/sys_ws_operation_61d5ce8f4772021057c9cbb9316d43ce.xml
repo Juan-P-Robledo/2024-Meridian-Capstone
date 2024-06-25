@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="DELETE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <http_method>GET</http_method>
+        <name>GET Method for Trakt key</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+    var authCode = request.queryParams.code;
+    var state = request.queryParams.state;
+
+    // Validate state to prevent CSRF attacks
+    if (!isValidState(state)) {
+        gs.error('Invalid state parameter received: ' + state);
+        response.setStatus(400);
+        response.setBody({ error: "Invalid state parameter" });
+        return;
+    }
+
+    // Continue with token exchange request...
+    var tokenEndpoint = 'https://api.trakt.tv/oauth/token';
+    var clientId = '83108f35754423241f7f694af40f4e00add45520862ee3877825c127f1c9d798';
+    var clientSecret = '1ddd3e45458ce12eb3b588d5bb51f986047387d3e57f1a41958cbeea72fe8f94';
+    var redirectUri = 'https://dev212312.service-now.com/api/1126673/trakt_api/oauth_redirect_do';
+
+    var payload = {
+        "code": authCode,
+        "client_id": clientId,
+        "client_secret": clientSecret,
+        "redirect_uri": redirectUri,
+        "grant_type": "authorization_code"
+    };
+
+    var r = new sn_ws.RESTMessageV2();
+    r.setHttpMethod('POST');
+    r.setEndpoint(tokenEndpoint);
+    r.setRequestHeader('Content-Type', 'application/json');
+    r.setRequestBody(JSON.stringify(payload));
+
+    try {
+        var responseToken = r.execute();
+        var responseBody = responseToken.getBody();
+        var httpStatus = responseToken.getStatusCode();
+
+        if (httpStatus == 200) {
+            var responseObject = JSON.parse(responseBody);
+            var accessToken = responseObject.access_token;
+
+            gs.info('Access Token: ' + accessToken);
+
+            response.setStatus(200);
+            response.setBody({ result: "Access token received successfully", access_token: accessToken });
+        } else {
+            gs.error('Error during token exchange: ' + responseBody);
+            response.setStatus(httpStatus);
+            response.setBody({ result: "Error during token exchange", details: responseBody });
+        }
+    } catch (ex) {
+        gs.error('Exception: ' + ex.message);
+        response.setStatus(500);
+        response.setBody({ result: "Exception occurred", details: ex.message });
+    }
+})(request, response);
+
+function isValidState(state) {
+    // Retrieve the expected state from session or database
+    var expectedState = gs.getSession().getClientData('trakt_oauth_state');
+
+    // Compare the received state with the expected state
+    return state === expectedState;
+}
+]]></operation_script>
+        <operation_uri>/api/1126673/trakt_api/oauth_redirect_do</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/oauth_redirect_do</relative_path>
+        <request_example/>
+        <requires_acl_authorization>true</requires_acl_authorization>
+        <requires_authentication>true</requires_authentication>
+        <requires_snc_internal_role>true</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-19 14:48:23</sys_created_on>
+        <sys_id>61d5ce8f4772021057c9cbb9316d43ce</sys_id>
+        <sys_mod_count>28</sys_mod_count>
+        <sys_name>GET Method for Trakt key</sys_name>
+        <sys_package display_value="Show recommendations" source="9800e6e247e2021057c9cbb9316d43b6">9800e6e247e2021057c9cbb9316d43b6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Show recommendations">9800e6e247e2021057c9cbb9316d43b6</sys_scope>
+        <sys_update_name>sys_ws_operation_61d5ce8f4772021057c9cbb9316d43ce</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-19 18:07:27</sys_updated_on>
+        <web_service_definition display_value="Trakt API">b955468f4772021057c9cbb9316d4339</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Show recommendations">9800e6e247e2021057c9cbb9316d43b6</application>
+        <file_path/>
+        <instance_id>df142059db6a319805ef172913961986</instance_id>
+        <instance_name>dev212312</instance_name>
+        <name>sys_ws_operation_61d5ce8f4772021057c9cbb9316d43ce</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ws_operation"&gt;&lt;sys_ws_operation action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;consumes&gt;application/json,application/xml,text/xml&lt;/consumes&gt;&lt;consumes_customized&gt;false&lt;/consumes_customized&gt;&lt;default_operation_uri/&gt;&lt;enforce_acl&gt;cf9d01d3e73003009d6247e603f6a990&lt;/enforce_acl&gt;&lt;http_method&gt;GET&lt;/http_method&gt;&lt;name&gt;GET Method for Trakt key&lt;/name&gt;&lt;operation_script&gt;&lt;![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+    var authCode = request.queryParams.code;
+    var state = request.queryParams.state;
+
+    // Validate state to prevent CSRF attacks
+    if (!isValidState(state)) {
+        gs.error('Invalid state parameter received: ' + state);
+        response.setStatus(400);
+        response.setBody({ error: "Invalid state parameter" });
+        return;
+    }
+
+    // Continue with token exchange request...
+    var tokenEndpoint = 'https://api.trakt.tv/oauth/token';
+    var clientId = '83108f35754423241f7f694af40f4e00add45520862ee3877825c127f1c9d798';
+    var clientSecret = '1ddd3e45458ce12eb3b588d5bb51f986047387d3e57f1a41958cbeea72fe8f94';
+    var redirectUri = 'https://dev212312.service-now.com/api/1126673/trakt_api/oauth_redirect_do';
+
+    var payload = {
+        "code": authCode,
+        "client_id": clientId,
+        "client_secret": clientSecret,
+        "redirect_uri": redirectUri,
+        "grant_type": "authorization_code"
+    };
+
+    var r = new sn_ws.RESTMessageV2();
+    r.setHttpMethod('POST');
+    r.setEndpoint(tokenEndpoint);
+    r.setRequestHeader('Content-Type', 'application/json');
+    r.setRequestBody(JSON.stringify(payload));
+
+    try {
+        var responseToken = r.execute();
+        var responseBody = responseToken.getBody();
+        var httpStatus = responseToken.getStatusCode();
+
+        if (httpStatus == 200) {
+            var responseObject = JSON.parse(responseBody);
+            var accessToken = responseObject.access_token;
+
+            gs.info('Access Token: ' + accessToken);
+
+            response.setStatus(200);
+            response.setBody({ result: "Access token received successfully", access_token: accessToken });
+        } else {
+            gs.error('Error during token exchange: ' + responseBody);
+            response.setStatus(httpStatus);
+            response.setBody({ result: "Error during token exchange", details: responseBody });
+        }
+    } catch (ex) {
+        gs.error('Exception: ' + ex.message);
+        response.setStatus(500);
+        response.setBody({ result: "Exception occurred", details: ex.message });
+    }
+})(request, response);
+
+function isValidState(state) {
+    // Retrieve the expected state from session or database
+    var expectedState = gs.getSession().getClientData('trakt_oauth_state');
+
+    // Compare the received state with the expected state
+    return state === expectedState;
+}
+]]&gt;&lt;/operation_script&gt;&lt;operation_uri&gt;/api/1126673/trakt_api/oauth_redirect_do&lt;/operation_uri&gt;&lt;produces&gt;application/json,application/xml,text/xml&lt;/produces&gt;&lt;produces_customized&gt;false&lt;/produces_customized&gt;&lt;relative_path&gt;/oauth_redirect_do&lt;/relative_path&gt;&lt;request_example/&gt;&lt;requires_acl_authorization&gt;true&lt;/requires_acl_authorization&gt;&lt;requires_authentication&gt;true&lt;/requires_authentication&gt;&lt;requires_snc_internal_role&gt;true&lt;/requires_snc_internal_role&gt;&lt;short_description/&gt;&lt;sys_class_name&gt;sys_ws_operation&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-19 14:48:23&lt;/sys_created_on&gt;&lt;sys_id&gt;61d5ce8f4772021057c9cbb9316d43ce&lt;/sys_id&gt;&lt;sys_mod_count&gt;28&lt;/sys_mod_count&gt;&lt;sys_name&gt;GET Method for Trakt key&lt;/sys_name&gt;&lt;sys_package display_value="Show recommendations" source="9800e6e247e2021057c9cbb9316d43b6"&gt;9800e6e247e2021057c9cbb9316d43b6&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Show recommendations"&gt;9800e6e247e2021057c9cbb9316d43b6&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ws_operation_61d5ce8f4772021057c9cbb9316d43ce&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-19 18:07:27&lt;/sys_updated_on&gt;&lt;web_service_definition display_value="Trakt API"&gt;b955468f4772021057c9cbb9316d4339&lt;/web_service_definition&gt;&lt;web_service_version/&gt;&lt;/sys_ws_operation&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-680789374</payload_hash>
+        <record_name>GET Method for Trakt key</record_name>
+        <reverted_from/>
+        <source>88eef93c4776c21057c9cbb9316d431f</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-19 18:07:27</sys_created_on>
+        <sys_id>7bb37ec74776021057c9cbb9316d436b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19031aea5670000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-19 18:07:27</sys_updated_on>
+        <type>Scripted REST Resource</type>
+        <update_guid>7fb37ec788760210bed0cc5169dd086a</update_guid>
+        <update_guid_history>7fb37ec788760210bed0cc5169dd086a:-680789374,cd416a8bb4f2021051181fe50a7b7acd:1282066074,f3902a038836021026694810ef2fbee8:1731037338,84502a8fe7f20210aeea2ab23d3896cb:212373828,520c5e8b41f20210b770bde0dd5d77af:-818405192,10fb960ba6f2021092bfb2b4deaecd16:1186662966,bd0bd24b82f20210e6d650ce17384013:1633504661,869a524b50f20210388adbc4108932f9:64929624,fa8a524b11f20210aa383f08b3668e61:-1205855342,faf956870af2021022c897cfce0bfa42:64929624,fbb916870ff2021091b364d4ed8516e4:-400232452,df48da4721f202105e21f963c41812d3:1964045121,52d7d247cbf20210388dd9affcb672fb:-1227852115,286792478af20210d4591287cc007f21:1931884546,845796cf12b202108f5944baf3b06317:367736060,a90312cf9ab20210df30ff79f779a1cb:-551596272,8db216cf9eb202104c6f37d456f6ab8c:-12190370,7872164fb7b202105431b31febe69136:2138444180,de51964bd2b202107db6d5493e624788:-1089972405,6980120be0b20210b8f58d7434f0cd92:1964045121,31cf828b36b20210211338fecf4d239b:1155646385,60ae828b0bb2021093631a2bd6604173:1964045121,b5ec4647e1b202104577fd8e97a4ee51:896856382,6b5c4a479eb202107beac2616d19f743:-858135058,f8fb4a872eb202104ceec0d3d6135393:1964045121,17cb4a870db2021052c948121746082a:362939697,9aface833fb20210775661859f123514:858747126,6e6a0e07c9b20210cafc89a5197416fd:-1315242754,37260a8f09720210b02246a8be50d4d6:998348927</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-25 14:42:31</sys_created_on>
+        <sys_db_object display_value="" name="sys_ws_operation">sys_ws_operation</sys_db_object>
+        <sys_id>35121a9718504478846db7cf5fdb83e4</sys_id>
+        <sys_metadata>61d5ce8f4772021057c9cbb9316d43ce</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GET Method for Trakt key</sys_name>
+        <sys_package display_value="Show recommendations" source="9800e6e247e2021057c9cbb9316d43b6">9800e6e247e2021057c9cbb9316d43b6</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Show recommendations">9800e6e247e2021057c9cbb9316d43b6</sys_scope>
+        <sys_scope_delete display_value="">b582729584a64c04977867726fcd2a19</sys_scope_delete>
+        <sys_update_name>sys_ws_operation_61d5ce8f4772021057c9cbb9316d43ce</sys_update_name>
+        <sys_update_version display_value="sys_ws_operation_61d5ce8f4772021057c9cbb9316d43ce">7bb37ec74776021057c9cbb9316d436b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-25 14:42:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

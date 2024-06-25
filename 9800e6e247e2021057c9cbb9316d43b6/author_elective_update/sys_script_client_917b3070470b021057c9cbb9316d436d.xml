@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>This Client Script will get a URL from an API and display the image in the corresponding spot. </description>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Display Show Image</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+    try {
+        // Function to set image source and handle errors
+        function setImageSource(imageUrl) {
+            try {
+                var imgElement = document.getElementById('showImage');
+                if (imgElement) {
+                    imgElement.src = imageUrl;
+                    g_form.addInfoMessage('Image URL set successfully: ' + imageUrl);
+                } else {
+                    g_form.addWarningMessage('Element with id "showImage" not found.');
+                }
+            } catch (error) {
+                g_form.addErrorMessage('Error setting image URL: ' + error.message);
+            }
+        }
+
+        // Check if g_form and document are defined and ready
+        if (typeof g_form !== 'undefined' && document.readyState === 'complete') {
+            var imageUrl = g_form.getValue('u_url');
+            if (imageUrl) {
+                setImageSource(imageUrl);
+            } else {
+                g_form.addInfoMessage('No URL found in u_url field');
+            }
+        } else {
+            // Retry after a short delay if not ready
+            setTimeout(displayImageOnLoad, 100);
+        }
+    } catch (error) {
+        g_form.addErrorMessage('Error in script: ' + error.message);
+    }
+}
+
+// Call the function when the form is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    displayImageOnLoad();
+});
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-24 19:56:30</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>917b3070470b021057c9cbb9316d436d</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Display Show Image</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Show recommendations" source="9800e6e247e2021057c9cbb9316d43b6">9800e6e247e2021057c9cbb9316d43b6</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Show recommendations">9800e6e247e2021057c9cbb9316d43b6</sys_scope>
+        <sys_update_name>sys_script_client_917b3070470b021057c9cbb9316d436d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-24 21:19:11</sys_updated_on>
+        <table>u_shows</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Show recommendations">9800e6e247e2021057c9cbb9316d43b6</application>
+        <file_path/>
+        <instance_id>df142059db6a319805ef172913961986</instance_id>
+        <instance_name>dev212312</instance_name>
+        <name>sys_script_client_917b3070470b021057c9cbb9316d436d</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description&gt;This Client Script will get a URL from an API and display the image in the corresponding spot. &lt;/description&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Display Show Image&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+    try {
+        // Function to set image source and handle errors
+        function setImageSource(imageUrl) {
+            try {
+                var imgElement = document.getElementById('showImage');
+                if (imgElement) {
+                    imgElement.src = imageUrl;
+                    g_form.addInfoMessage('Image URL set successfully: ' + imageUrl);
+                } else {
+                    g_form.addWarningMessage('Element with id "showImage" not found.');
+                }
+            } catch (error) {
+                g_form.addErrorMessage('Error setting image URL: ' + error.message);
+            }
+        }
+
+        // Check if g_form and document are defined and ready
+        if (typeof g_form !== 'undefined' &amp;&amp; document.readyState === 'complete') {
+            var imageUrl = g_form.getValue('u_url');
+            if (imageUrl) {
+                setImageSource(imageUrl);
+            } else {
+                g_form.addInfoMessage('No URL found in u_url field');
+            }
+        } else {
+            // Retry after a short delay if not ready
+            setTimeout(displayImageOnLoad, 100);
+        }
+    } catch (error) {
+        g_form.addErrorMessage('Error in script: ' + error.message);
+    }
+}
+
+// Call the function when the form is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    displayImageOnLoad();
+});
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2024-06-24 19:56:30&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;917b3070470b021057c9cbb9316d436d&lt;/sys_id&gt;&lt;sys_mod_count&gt;14&lt;/sys_mod_count&gt;&lt;sys_name&gt;Display Show Image&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Show recommendations" source="9800e6e247e2021057c9cbb9316d43b6"&gt;9800e6e247e2021057c9cbb9316d43b6&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Show recommendations"&gt;9800e6e247e2021057c9cbb9316d43b6&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_917b3070470b021057c9cbb9316d436d&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2024-06-24 21:19:11&lt;/sys_updated_on&gt;&lt;table&gt;u_shows&lt;/table&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;0&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-34714206</payload_hash>
+        <record_name>Display Show Image</record_name>
+        <reverted_from/>
+        <source>88eef93c4776c21057c9cbb9316d431f</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-24 21:19:11</sys_created_on>
+        <sys_id>859f81f8474b021057c9cbb9316d4337</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1904c1dfa420000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-24 21:19:11</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>0d9f81f83f4b02108797b2cd8ec64e36</update_guid>
+        <update_guid_history>0d9f81f83f4b02108797b2cd8ec64e36:-34714206,5e0f4978504b0210ee0809f291ec4a03:-222241789,0c8d05f45f4b021070eb4d57aa0768e1:348941051,4f1d0db4ed4b02104b4f07b1deca0205:343798608,919c8d34484b02103700ceea75911628:1136272814,4c3cc9b45c4b02106d49f6b752ecacaa:208953914,03fb0974f94b0210192e2529608cafce:-1202064371,889b01745d4b02106967fe1da0d6340c:-839635236,bc4b0d34114b02109cfbe4953d4a023f:-1202064371,5f0a8570004b021048ca2db7680a4bf6:1517792369,76f00138dc0b0210df12834337a22830:1404883398,f39085f4050b02108634e85e65f60a57:-1410440652,6b300db4f70b02106d33653166b493eb:-335366982,441f7cb0c10b02104826f0218c4b8775:801080840,c6acf0b0fd0b0210503f51d82608b451:-226020251</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-24 21:38:18</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>29567f0c9582496c8705f507534f8d81</sys_id>
+        <sys_metadata>917b3070470b021057c9cbb9316d436d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Display Show Image</sys_name>
+        <sys_package display_value="Show recommendations" source="9800e6e247e2021057c9cbb9316d43b6">9800e6e247e2021057c9cbb9316d43b6</sys_package>
+        <sys_parent display_value="Shows">b380aee64726021057c9cbb9316d438d</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Show recommendations">9800e6e247e2021057c9cbb9316d43b6</sys_scope>
+        <sys_scope_delete display_value="">b582729584a64c04977867726fcd2a19</sys_scope_delete>
+        <sys_update_name>sys_script_client_917b3070470b021057c9cbb9316d436d</sys_update_name>
+        <sys_update_version display_value="sys_script_client_917b3070470b021057c9cbb9316d436d">859f81f8474b021057c9cbb9316d4337</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-24 21:38:18</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

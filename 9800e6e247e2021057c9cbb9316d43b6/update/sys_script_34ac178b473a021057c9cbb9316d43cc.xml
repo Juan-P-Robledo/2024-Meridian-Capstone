@@ -44,13 +44,24 @@
 
             if (tvShows && tvShows.results && tvShows.results.length > 0) {
                 var firstResult = tvShows.results[0]; // Get the first result
+				var posterPath = JSON.stringify(firstResult.poster_path);
+				posterPath = posterPath.replace(/['"]/g, '');
                 gs.info('Business Rule: Found show: ' + firstResult.name);
                 gs.info('Business Rule: Overview: ' + firstResult.overview);
                 gs.info('Business Rule: First air date: ' + firstResult.first_air_date);
-				gs.info('Business Rule: Adult Content: ' + firstResult.includeAdult);
-				gs.info('Business Rule: Language: ' + firstResult.language);
+				gs.info('Business Rule: Adult Content: ' + JSON.stringify(firstResult.adult));
+				gs.info('Business Rule: Country origins: ' + JSON.stringify(firstResult.origin_country));
+				gs.info('Business Rule: Page: ' + firstResult.page);
+				gs.info('Business Rule: Show details ' +  JSON.stringify(firstResult));
+				gs.info('Business rule: Poster URL: ' + posterPath);
+				
 				current.u_first_aired = firstResult.first_air_date;
 				current.u_overview = firstResult.overview;
+				current.u_api_name = firstResult.name;
+				current.u_adult_content = JSON.stringify(firstResult.adult);
+				current.u_origin_country = JSON.stringify(firstResult.origin_country);
+				
+				current.u_url = ('https://image.tmdb.org/t/p/original' + posterPath);
 
                 // Example: Set fields on the current record
                 current.u_show_details = JSON.stringify(firstResult); // Assuming you have a field to store the details
@@ -74,7 +85,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>34ac178b473a021057c9cbb9316d43cc</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>Find Show Information</sys_name>
         <sys_overrides/>
         <sys_package display_value="Show recommendations" source="9800e6e247e2021057c9cbb9316d43b6">9800e6e247e2021057c9cbb9316d43b6</sys_package>
@@ -82,7 +93,7 @@
         <sys_scope display_value="Show recommendations">9800e6e247e2021057c9cbb9316d43b6</sys_scope>
         <sys_update_name>sys_script_34ac178b473a021057c9cbb9316d43cc</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-06-24 13:28:33</sys_updated_on>
+        <sys_updated_on>2024-06-24 20:58:29</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
