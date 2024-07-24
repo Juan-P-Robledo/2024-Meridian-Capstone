@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_job_indicator_breakdown_ex">
+    <pa_job_indicator_breakdown_ex action="INSERT_OR_UPDATE">
+        <breakdown display_value="Show's State">9b59ca5dc30302109712b71d05013181</breakdown>
+        <job_indicator display_value="temporary job for collecting Shows Urgency - Shows: Total Shows Being Added">200d0a51c34302109712b71d05013173</job_indicator>
+        <sys_class_name>pa_job_indicator_breakdown_ex</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-26 15:04:31</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>ac0d0a91c34302109712b71d050131f2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Shows.State.temporary job for collecting Shows Urgency - Shows: Total Shows Being Added</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>pa_job_indicator_breakdown_ex_ac0d0a91c34302109712b71d050131f2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-26 15:04:31</sys_updated_on>
+    </pa_job_indicator_breakdown_ex>
+</record_update>

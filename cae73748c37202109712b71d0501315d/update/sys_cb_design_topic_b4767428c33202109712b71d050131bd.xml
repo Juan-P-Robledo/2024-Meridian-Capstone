@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_design_topic">
+    <sys_cb_design_topic action="INSERT_OR_UPDATE">
+        <compiled_topic display_value="Create Show Recommendations 2">b0767428c33202109712b71d050131b6</compiled_topic>
+        <design_definition>{"type":"FlowTopic","triggers":[{"type":"Trigger","name":"4f5ceea1529c49fe87ff1c03b419a0a8","triggerType":"request","applicability":{"type":"Applicability","mode":"script","value":"true"},"id":"4f5ceea1529c49fe87ff1c03b419a0a8"}],"goals":[{"name":"primary","trigger_id":"4f5ceea1529c49fe87ff1c03b419a0a8","nodes":[{"type":"StartGoal","goal_id":"primary","greeting_msg":{"type":"String","mode":"string","value":"gs.getMessageLang(\"va:topic:db5ea4dcc37602109712b71d05013160:node:f5f1cb41b641401a97f4e40191b4228c:field:GreetingMsg\", vaContext.getRequesterLang())"},"id":"f5f1cb41b641401a97f4e40191b4228c","name":"Start","expert_mode":false},{"type":"TerminateGoal","goal_id":"primary","confirmation_msg":{"type":"String","mode":"string","value":""},"id":"c8725e41fb7d4662ac5cc258e784aca4","name":"End","expert_mode":false},{"type":"InputPrompt","variable_id":"416d95ba6bd7402aa393e3fff615b8aa","message":{"type":"String","mode":"string","value":"gs.getMessageLang(\"Got any cool show recommendations?\", vaContext.getRequesterLang())"},"nlu_entity_binding":{"type":"NLUEntityBinding","allow_text_input":false,"use_confirmation_prompt":true},"request_feedback":true,"skippable":{"type":"Applicability","mode":"script","value":"false"},"skipreprompt":{"type":"Applicability","mode":"script","value":"false"},"id":"8ff662822bdb4217ad85f45b83fbde4c","name":"User Recommendations","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"true"},"expert_mode":false,"formatType":"Text","validationScript":"","description":""},{"type":"CRUDAction","mode":"read","read_mode":"variable","query":"name_of_the_show={{vaInputs.user_recommendations}}^ORapi_show_name={{vaInputs.user_recommendations}}","variable_id":"54c207723aaf4502b89786d23d65c823","id":"525a111ddfd34abfb2fa62f36a9325e5","name":"Check if Show exists","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"true"},"expert_mode":false,"condition":{"type":"Condition","mode":"glide_query","value":"name_of_the_show={{vaInputs.user_recommendations}}^ORapi_show_name={{vaInputs.user_recommendations}}"}},{"type":"InputPrompt","variable_id":"b0c0593a15ec40afa8885586464281d8","message":{"type":"String","mode":"string","value":"gs.getMessageLang(\"Would you like to recommend another show?\", vaContext.getRequesterLang())"},"nlu_entity_binding":{"type":"NLUEntityBinding","allow_text_input":false,"use_confirmation_prompt":true},"request_feedback":false,"skippable":{"type":"Applicability","mode":"script","value":"false"},"skipreprompt":{"type":"Applicability","mode":"script","value":"false"},"id":"a3e531e187d945f4b20ac603099a02d8","name":"Recommend Another Show to User","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"true"},"expert_mode":false,"description":""},{"type":"Decision","name":"Decision","branches":[{"type":"Branch","label":"recommend again","expression":{"type":"Applicability","mode":"query","value":"recommend_another_show_to_user=true"},"id":"ee9724455cc649b7941b98016a204131","name":"recommend again","expert_mode":false},{"type":"Branch","label":"don't recommend","expression":{"type":"Applicability","mode":"query","value":"recommend_another_show_to_user=false"},"id":"c0591b98348e4bd1a86a261308a4a39f","name":"don't recommend","expert_mode":false}],"id":"938c2b10fb654d9eb7245f8d314791e0","goal_id":"primary","expert_mode":false},{"type":"TextOutputPrompt","value":[{"type":"String","mode":"string","value":"gs.getMessageLang(\"Thank you for the recommendation(s)! See ya!\", vaContext.getRequesterLang())"}],"request_feedback":true,"id":"a99d6c1493f243c6b61eeebefa75de06","name":"Farewell","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"true"},"expert_mode":false,"secure":false},{"type":"Decision","name":"Does the Show Exist?","branches":[{"type":"Branch","label":"it exists","expression":{"type":"Applicability","mode":"query","value":"check_if_show_existsISNOTEMPTY"},"id":"00e2aae7c0ca4b359a259b18aaaf21b8","name":"it exists","expert_mode":false},{"type":"Branch","label":"doesn't exist","expression":{"type":"Applicability","mode":"query","value":"check_if_show_existsISEMPTY"},"id":"c2f70307fa2b427aa0e1867416b97f7f","name":"doesn't exist","expert_mode":false}],"id":"39305d3a86fa4882a8935252304f9bf5","goal_id":"primary","expert_mode":false},{"type":"TextOutputPrompt","value":[{"type":"String","mode":"string","value":"gs.getMessageLang(\"va:topic:db5ea4dcc37602109712b71d05013160:node:009a913810b449fdb0a296c8eebae973:field:0 {0}\", vaContext.getRequesterLang(), [vaInputs.user_recommendations])"}],"request_feedback":true,"id":"009a913810b449fdb0a296c8eebae973","name":"Response to already existing show","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"true"},"expert_mode":false,"secure":false},{"type":"RecordOutputPrompt","mode":"variable","table":"x_1435841_shows_shows","variable_id":"8c0ec8c2c1744b6590b02f39bfb97d05","fields":["api_show_name","overview","show_image"],"request_feedback":true,"id":"a2666b43ff3a40a8b972665ca0a332b6","name":"Display Record","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"true"},"expert_mode":false,"condition":{"type":"Condition","mode":"glide_query","value":""}},{"type":"CRUDAction","mode":"create","query":"name_of_the_show={{vaInputs.user_recommendations}}","variable_id":"8c0ec8c2c1744b6590b02f39bfb97d05","id":"6ea129b570f84c11b34939b39e1bd8ba","name":"User Rec. Is Created","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"true"},"expert_mode":false,"attachments":[{"type":"String","mode":"string","value":""}]},{"type":"LibraryCall","library_topic_name":"Pause","library_topic_id":"da36dc0f534e2010c232ddeeff7b12d4","library_topic_is_template":false,"parameter-mappings":[{"parameter-name":"seconds","value":{"type":"String","mode":"string","value":"5"},"metadata":{"type":"String","list":false,"items":[],"use_items":false}}],"return-value-mappings":[],"id":"be2fffae086d40c7927148093aa0ff57","name":"pause","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"true"},"expert_mode":false}],"edges":[{"type":"Edge","source_node_id":"009a913810b449fdb0a296c8eebae973","target_node_id":"a99d6c1493f243c6b61eeebefa75de06","id":"3e30b547c83a4f3cb11413e9f4cef3f2"},{"type":"Edge","source_node_id":"39305d3a86fa4882a8935252304f9bf5","target_node_id":"009a913810b449fdb0a296c8eebae973","branch_id":"00e2aae7c0ca4b359a259b18aaaf21b8","id":"63200a5c42ae482aa1eab8e3b92c82f0","name":"00e2aae7c0ca4b359a259b18aaaf21b8"},{"type":"Edge","source_node_id":"938c2b10fb654d9eb7245f8d314791e0","target_node_id":"8ff662822bdb4217ad85f45b83fbde4c","branch_id":"ee9724455cc649b7941b98016a204131","id":"ea2c7a1ff6f547cda5609ba6e2e8a131","name":"ee9724455cc649b7941b98016a204131"},{"type":"Edge","source_node_id":"938c2b10fb654d9eb7245f8d314791e0","target_node_id":"a99d6c1493f243c6b61eeebefa75de06","branch_id":"c0591b98348e4bd1a86a261308a4a39f","id":"143c9be58077460bbfd17698b83d723f","name":"c0591b98348e4bd1a86a261308a4a39f"},{"type":"Edge","source_node_id":"a2666b43ff3a40a8b972665ca0a332b6","target_node_id":"a3e531e187d945f4b20ac603099a02d8","id":"952fee26df864946aca248ee1ddb62a8"},{"type":"Edge","source_node_id":"f5f1cb41b641401a97f4e40191b4228c","target_node_id":"8ff662822bdb4217ad85f45b83fbde4c","id":"2a3afffa85b64e80864777ec38f310e5"},{"type":"Edge","source_node_id":"8ff662822bdb4217ad85f45b83fbde4c","target_node_id":"525a111ddfd34abfb2fa62f36a9325e5","id":"acc206a43542403fb066d27de8834330"},{"type":"Edge","source_node_id":"a3e531e187d945f4b20ac603099a02d8","target_node_id":"938c2b10fb654d9eb7245f8d314791e0","id":"9de137cb435342a398c27f43cca248bd"},{"type":"Edge","source_node_id":"a99d6c1493f243c6b61eeebefa75de06","target_node_id":"c8725e41fb7d4662ac5cc258e784aca4","id":"7d11bb07d6bc4ccab1b884bd818df686"},{"type":"Edge","source_node_id":"525a111ddfd34abfb2fa62f36a9325e5","target_node_id":"39305d3a86fa4882a8935252304f9bf5","id":"6984fcb7116f475bb5caa0f4ab0dc087"},{"type":"Edge","source_node_id":"39305d3a86fa4882a8935252304f9bf5","target_node_id":"6ea129b570f84c11b34939b39e1bd8ba","branch_id":"c2f70307fa2b427aa0e1867416b97f7f","id":"60c2b688775346daa997f6acb0ebda04","name":"c2f70307fa2b427aa0e1867416b97f7f"},{"type":"Edge","source_node_id":"6ea129b570f84c11b34939b39e1bd8ba","target_node_id":"be2fffae086d40c7927148093aa0ff57","id":"7d1827da3a1141789ff939b424ca497d"},{"type":"Edge","source_node_id":"be2fffae086d40c7927148093aa0ff57","target_node_id":"a2666b43ff3a40a8b972665ca0a332b6","id":"9b938ce659b046cc937be2d4b457c478"}],"id":"primary"}],"script_variables":[{"type":"String","name":"LiveAgent_application","value":{"type":"String","mode":"string"},"list":false,"id":"5b3ec263fa03419885dd69cf01f02084","formatType":"text","secure":false,"sensitive":false,"aiInput":false}],"glide_variables":[{"type":"Reference","table":"sys_user","id":"current-user","name":"user","formatType":"text","secure":false,"sensitive":false,"aiInput":false,"list":false},{"type":"String","name":"user_recommendations","list":false,"id":"416d95ba6bd7402aa393e3fff615b8aa","formatType":"Text","validationScript":"","secure":false,"sensitive":false,"aiInput":false},{"type":"Reference","table":"x_1435841_shows_shows","id":"54c207723aaf4502b89786d23d65c823","name":"check_if_show_exists","formatType":"text","secure":false,"sensitive":false,"aiInput":false,"list":false},{"type":"True/False","id":"b0c0593a15ec40afa8885586464281d8","name":"recommend_another_show_to_user","formatType":"text","secure":false,"sensitive":false,"aiInput":false,"list":false},{"type":"Reference","table":"x_1435841_shows_shows","id":"8c0ec8c2c1744b6590b02f39bfb97d05","name":"user_rec_is_created","formatType":"text","secure":false,"sensitive":false,"aiInput":false,"list":false}],"applicability":{"type":"Applicability","mode":"script","value":"true"},"roles":[],"scope":"cae73748c37202109712b71d0501315d","domain":"global","topic_type":"STANDARD","channels":[],"dialog_acts_enabled":false,"id":"db5ea4dcc37602109712b71d05013160","name":"Create Show Recommendations 2","key_phrases":["Create Show Recommendations 2"],"nlu_provider":"","nlu_model":"","nlu_model_label":"","nlu_intent":"","nlu_intent_label":"","flexible_conversation_switching":false,"autopilot_topic":false,"design_categories":[{"name":null,"visible":false,"sysId":"7086c41cc3b202109712b71d050131e3"}],"triggerable_by_notification":false,"description":"Allows the users to try and recommend shows to the Virtual Agent.","model_type":"nlu_keyword","foundational":false,"modify_confirmation_enabled":false,"context_profiles":[],"library":false,"csTopicId":"b0767428c33202109712b71d050131b6","readOnly":false,"nluMapping":"[]"}</design_definition>
+        <design_topic_id>db5ea4dcc37602109712b71d05013160</design_topic_id>
+        <graph>{
+  "graph_api_version": "1.0.65",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "f5f1cb41b641401a97f4e40191b4228c": {
+          "id": "f5f1cb41b641401a97f4e40191b4228c",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Hi, I'm Virtual Agent and I'm in a huge dilemma. I need some shows to binge and I was wondering if you have any."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          }
+        },
+        "c8725e41fb7d4662ac5cc258e784aca4": {
+          "id": "c8725e41fb7d4662ac5cc258e784aca4",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          }
+        },
+        "8ff662822bdb4217ad85f45b83fbde4c": {
+          "id": "8ff662822bdb4217ad85f45b83fbde4c",
+          "stepType": "TextPrompt",
+          "name": "User Recommendations",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Got any cool show recommendations? "
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "416d95ba6bd7402aa393e3fff615b8aa",
+          "detailDescription": "",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          },
+          "requestFeedback": true
+        },
+        "525a111ddfd34abfb2fa62f36a9325e5": {
+          "id": "525a111ddfd34abfb2fa62f36a9325e5",
+          "stepType": "LookupRecord",
+          "name": "Check if Show exists",
+          "condition": {
+            "mode": "glide_query",
+            "value": "name_of_the_show={{vaInputs.user_recommendations}}^ORapi_show_name={{vaInputs.user_recommendations}}"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "54c207723aaf4502b89786d23d65c823"
+        },
+        "a3e531e187d945f4b20ac603099a02d8": {
+          "id": "a3e531e187d945f4b20ac603099a02d8",
+          "stepType": "BooleanPrompt",
+          "name": "Recommend Another Show to User",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Would you like to recommend another show?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "b0c0593a15ec40afa8885586464281d8",
+          "detailDescription": ""
+        },
+        "938c2b10fb654d9eb7245f8d314791e0": {
+          "id": "938c2b10fb654d9eb7245f8d314791e0",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "a99d6c1493f243c6b61eeebefa75de06": {
+          "id": "a99d6c1493f243c6b61eeebefa75de06",
+          "stepType": "TextOutput",
+          "name": "Farewell",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Thank you for the recommendation(s)! See ya!"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "b56b5ee975da4a79b0a6b202d26fbc16"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "39305d3a86fa4882a8935252304f9bf5": {
+          "id": "39305d3a86fa4882a8935252304f9bf5",
+          "stepType": "Decision",
+          "name": "Does the Show Exist?"
+        },
+        "009a913810b449fdb0a296c8eebae973": {
+          "id": "009a913810b449fdb0a296c8eebae973",
+          "stepType": "TextOutput",
+          "name": "Response to already existing show",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.user_recommendations}}",
+                        "displayValue": "Input Variables➛User Recommendations"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": "?  I think you recommended me this show already... That's ok though!"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "c050c11628d14f9d9864f230e1196c8e"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "a2666b43ff3a40a8b972665ca0a332b6": {
+          "id": "a2666b43ff3a40a8b972665ca0a332b6",
+          "stepType": "RecordOutput",
+          "name": "Display Record",
+          "variableId": "8c0ec8c2c1744b6590b02f39bfb97d05",
+          "cardTemplate": "General",
+          "cardFields": {},
+          "mode": "variable",
+          "tableName": "x_1435841_shows_shows",
+          "fields": [
+            "api_show_name",
+            "overview",
+            "show_image"
+          ],
+          "cardDefinition": {
+            "name": "Record",
+            "value": "General"
+          },
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": ""
+          }
+        },
+        "6ea129b570f84c11b34939b39e1bd8ba": {
+          "id": "6ea129b570f84c11b34939b39e1bd8ba",
+          "stepType": "CrudAction",
+          "name": "User Rec. Is Created",
+          "template": {
+            "query": {
+              "terms": [
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "name_of_the_show",
+                  "expression": "{{vaInputs.user_recommendations}}",
+                  "deserializedExpression": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "text": ""
+                        },
+                        {
+                          "type": "datapill",
+                          "dataPill": {
+                            "value": "{{vaInputs.user_recommendations}}",
+                            "displayValue": "Input Variables➛User Recommendations"
+                          },
+                          "children": [
+                            {
+                              "text": ""
+                            }
+                          ]
+                        },
+                        {
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "queryString": "name_of_the_show={{vaInputs.user_recommendations}}"
+          },
+          "mode": "create",
+          "record": "",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "attachments": [
+            {
+              "value": "",
+              "mode": "simple"
+            }
+          ],
+          "variableId": "8c0ec8c2c1744b6590b02f39bfb97d05"
+        },
+        "be2fffae086d40c7927148093aa0ff57": {
+          "id": "be2fffae086d40c7927148093aa0ff57",
+          "stepType": "Component",
+          "name": "pause",
+          "fields": [],
+          "reusableTopicId": "da36dc0f534e2010c232ddeeff7b12d4",
+          "reusableTopicChoice": "Pause",
+          "sourceType": "TOPIC_BLOCK",
+          "loading": false,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "inputs": {
+            "seconds": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "5"
+                    }
+                  ]
+                }
+              ],
+              "mode": "string",
+              "type": "String"
+            }
+          },
+          "outputs": [],
+          "outdatedNote": false,
+          "variableIds": []
+        }
+      },
+      "edges": [
+        {
+          "id": "3e30b547c83a4f3cb11413e9f4cef3f2",
+          "edgeType": "Edge",
+          "source": "009a913810b449fdb0a296c8eebae973",
+          "target": "a99d6c1493f243c6b61eeebefa75de06",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "63200a5c42ae482aa1eab8e3b92c82f0",
+          "edgeType": "Branch",
+          "source": "39305d3a86fa4882a8935252304f9bf5",
+          "target": "009a913810b449fdb0a296c8eebae973",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.check_if_show_existsISNOTEMPTY",
+            "mode": "query"
+          },
+          "label": "it exists"
+        },
+        {
+          "id": "ea2c7a1ff6f547cda5609ba6e2e8a131",
+          "edgeType": "Branch",
+          "source": "938c2b10fb654d9eb7245f8d314791e0",
+          "target": "8ff662822bdb4217ad85f45b83fbde4c",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.recommend_another_show_to_user=true",
+            "mode": "query"
+          },
+          "label": "recommend again"
+        },
+        {
+          "id": "143c9be58077460bbfd17698b83d723f",
+          "edgeType": "Branch",
+          "source": "938c2b10fb654d9eb7245f8d314791e0",
+          "target": "a99d6c1493f243c6b61eeebefa75de06",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.recommend_another_show_to_user=false",
+            "mode": "query"
+          },
+          "label": "don't recommend"
+        },
+        {
+          "id": "952fee26df864946aca248ee1ddb62a8",
+          "edgeType": "Edge",
+          "source": "a2666b43ff3a40a8b972665ca0a332b6",
+          "target": "a3e531e187d945f4b20ac603099a02d8",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "2a3afffa85b64e80864777ec38f310e5",
+          "edgeType": "Edge",
+          "source": "f5f1cb41b641401a97f4e40191b4228c",
+          "target": "8ff662822bdb4217ad85f45b83fbde4c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "acc206a43542403fb066d27de8834330",
+          "edgeType": "Edge",
+          "source": "8ff662822bdb4217ad85f45b83fbde4c",
+          "target": "525a111ddfd34abfb2fa62f36a9325e5",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9de137cb435342a398c27f43cca248bd",
+          "edgeType": "Edge",
+          "source": "a3e531e187d945f4b20ac603099a02d8",
+          "target": "938c2b10fb654d9eb7245f8d314791e0",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7d11bb07d6bc4ccab1b884bd818df686",
+          "edgeType": "Edge",
+          "source": "a99d6c1493f243c6b61eeebefa75de06",
+          "target": "c8725e41fb7d4662ac5cc258e784aca4",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "6984fcb7116f475bb5caa0f4ab0dc087",
+          "edgeType": "Edge",
+          "source": "525a111ddfd34abfb2fa62f36a9325e5",
+          "target": "39305d3a86fa4882a8935252304f9bf5",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "60c2b688775346daa997f6acb0ebda04",
+          "edgeType": "Branch",
+          "source": "39305d3a86fa4882a8935252304f9bf5",
+          "target": "6ea129b570f84c11b34939b39e1bd8ba",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.check_if_show_existsISEMPTY",
+            "mode": "query"
+          },
+          "label": "doesn't exist"
+        },
+        {
+          "id": "7d1827da3a1141789ff939b424ca497d",
+          "edgeType": "Edge",
+          "source": "6ea129b570f84c11b34939b39e1bd8ba",
+          "target": "be2fffae086d40c7927148093aa0ff57",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9b938ce659b046cc937be2d4b457c478",
+          "edgeType": "Edge",
+          "source": "be2fffae086d40c7927148093aa0ff57",
+          "target": "a2666b43ff3a40a8b972665ca0a332b6",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "5b3ec263fa03419885dd69cf01f02084": {
+      "id": "5b3ec263fa03419885dd69cf01f02084",
+      "name": "LiveAgent_application",
+      "value": {
+        "mode": "simple",
+        "value": null
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "416d95ba6bd7402aa393e3fff615b8aa": {
+      "id": "416d95ba6bd7402aa393e3fff615b8aa",
+      "name": "user_recommendations",
+      "label": "User Recommendations",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTcxODExNjIyMjkwMiBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      },
+      "nodeId": "8ff662822bdb4217ad85f45b83fbde4c",
+      "isHidden": false
+    },
+    "54c207723aaf4502b89786d23d65c823": {
+      "id": "54c207723aaf4502b89786d23d65c823",
+      "name": "check_if_show_exists",
+      "label": "Check If Show Exists",
+      "varType": "reference",
+      "table": "x_1435841_shows_shows",
+      "category": "vaInputs",
+      "nodeId": "525a111ddfd34abfb2fa62f36a9325e5",
+      "isHidden": false
+    },
+    "b0c0593a15ec40afa8885586464281d8": {
+      "id": "b0c0593a15ec40afa8885586464281d8",
+      "name": "recommend_another_show_to_user",
+      "label": "Recommend Another Show To User",
+      "varType": "boolean",
+      "secure": false,
+      "category": "vaInputs",
+      "nodeId": "a3e531e187d945f4b20ac603099a02d8",
+      "isHidden": false
+    },
+    "8c0ec8c2c1744b6590b02f39bfb97d05": {
+      "id": "8c0ec8c2c1744b6590b02f39bfb97d05",
+      "name": "user_rec_is_created",
+      "label": "User Rec. Is Created",
+      "varType": "reference",
+      "table": "x_1435841_shows_shows",
+      "inactive": false,
+      "category": "vaInputs",
+      "nodeId": "6ea129b570f84c11b34939b39e1bd8ba",
+      "isHidden": false
+    }
+  }
+}</graph>
+        <name>Create Show Recommendations 2</name>
+        <sys_class_name>sys_cb_design_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-11 14:35:12</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>b4767428c33202109712b71d050131bd</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name>FlowTopic</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_cb_design_topic_b4767428c33202109712b71d050131bd</sys_update_name>
+        <sys_updated_by>oscar.vazquez</sys_updated_by>
+        <sys_updated_on>2024-07-23 14:55:39</sys_updated_on>
+        <type>FlowTopic</type>
+    </sys_cb_design_topic>
+</record_update>

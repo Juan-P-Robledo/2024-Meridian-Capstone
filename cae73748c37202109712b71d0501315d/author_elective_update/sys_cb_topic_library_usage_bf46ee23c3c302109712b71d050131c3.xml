@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic_library_usage">
+    <sys_cb_topic_library_usage action="DELETE">
+        <calling_cb_topic_id display_value="Create Show Recommendations 2">db5ea4dcc37602109712b71d05013160</calling_cb_topic_id>
+        <library_cb_topic_id display_value="Pause">86d5980f534e2010c232ddeeff7b1238</library_cb_topic_id>
+        <sys_class_name>sys_cb_topic_library_usage</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-03 16:41:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>bf46ee23c3c302109712b71d050131c3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_cb_topic_library_usage_bf46ee23c3c302109712b71d050131c3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-03 16:41:24</sys_updated_on>
+    </sys_cb_topic_library_usage>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Shows">cae73748c37202109712b71d0501315d</application>
+        <file_path/>
+        <instance_id>7246842b1ba1c29832182f8dee4bcbeb</instance_id>
+        <instance_name>dev260561</instance_name>
+        <name>sys_cb_topic_library_usage_bf46ee23c3c302109712b71d050131c3</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic_library_usage"><sys_cb_topic_library_usage action="INSERT_OR_UPDATE"><calling_cb_topic_id display_value="Create Show Recommendations 2">db5ea4dcc37602109712b71d05013160</calling_cb_topic_id><library_cb_topic_id display_value="Pause">86d5980f534e2010c232ddeeff7b1238</library_cb_topic_id><sys_class_name>sys_cb_topic_library_usage</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-07-03 16:41:24</sys_created_on><sys_domain>global</sys_domain><sys_id>bf46ee23c3c302109712b71d050131c3</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_overrides/><sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package><sys_policy/><sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope><sys_update_name>sys_cb_topic_library_usage_bf46ee23c3c302109712b71d050131c3</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-07-03 16:41:24</sys_updated_on></sys_cb_topic_library_usage></record_update>]]></payload>
+        <payload_hash>-619816027</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>4ae73748c37202109712b71d05013161</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-03 16:41:24</sys_created_on>
+        <sys_id>7f46ee23c3c302109712b71d050131c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1907978e4280000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-03 16:41:24</sys_updated_on>
+        <type>Topic Library Usage</type>
+        <update_guid>3346ee231cc3021057f541963ebdc8c6</update_guid>
+        <update_guid_history>3346ee231cc3021057f541963ebdc8c6:-619816027</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-22 16:04:16</sys_created_on>
+        <sys_db_object display_value="" name="sys_cb_topic_library_usage">sys_cb_topic_library_usage</sys_db_object>
+        <sys_id>8be519ae32dd4278b5282d313aca4010</sys_id>
+        <sys_metadata>bf46ee23c3c302109712b71d050131c3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_scope_delete display_value="">00a65963a1ca4dd880007d6948aaf8c4</sys_scope_delete>
+        <sys_update_name>sys_cb_topic_library_usage_bf46ee23c3c302109712b71d050131c3</sys_update_name>
+        <sys_update_version display_value="sys_cb_topic_library_usage_bf46ee23c3c302109712b71d050131c3">7f46ee23c3c302109712b71d050131c6</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-22 16:04:16</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

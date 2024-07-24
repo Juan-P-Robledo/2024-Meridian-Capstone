@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_job_indicators">
+    <pa_job_indicators action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <collect>1</collect>
+        <collect_indicator>true</collect_indicator>
+        <display>Shows Historical Data - Shows: Total Shows Being Added</display>
+        <indicator display_value="Shows: Total Shows Being Added">b2168a59c30302109712b71d050131f4</indicator>
+        <job display_value="Shows Historical Data">4b0052d5c34302109712b71d05013123</job>
+        <sys_class_name>pa_job_indicators</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-26 15:19:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b1705ad5c34302109712b71d0501319b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Shows: Total Shows Being Added.Shows Historical Data</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>pa_job_indicators_b1705ad5c34302109712b71d0501319b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-26 15:19:37</sys_updated_on>
+    </pa_job_indicators>
+</record_update>

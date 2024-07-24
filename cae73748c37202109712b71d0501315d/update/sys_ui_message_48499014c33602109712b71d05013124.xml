@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application>Virtual Agent</application>
+        <code/>
+        <commented_message/>
+        <key>va:topic:b78b8090c3f202109712b71d0501319e:node:a02dbda6c01347dfb7bd010320a62c90:field:0 {0}</key>
+        <language>en</language>
+        <message>{0}? I think I've heard of it....</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 17:49:09</sys_created_on>
+        <sys_id>48499014c33602109712b71d05013124</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>va:topic:b78b8090c3f202109712b71d0501319e:node:a02dbda6c01347dfb7bd010320a62c90:field:0 {0}</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_ui_message_48499014c33602109712b71d05013124</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 17:49:09</sys_updated_on>
+    </sys_ui_message>
+</record_update>

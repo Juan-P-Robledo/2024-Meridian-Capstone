@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="8b228494c3b202109712b71d0501310f" label="Shows" max_length="40" name="x_1435841_shows_shows" type="collection">
+        <element label="API Show Name" max_length="200" name="api_show_name" read_only="true" type="string"/>
+        <element label="Name of the Show" max_length="150" name="name_of_the_show" type="string"/>
+        <element label="Origin Country" max_length="200" name="origin_country" read_only="true" type="string"/>
+        <element label="First Aired" max_length="100" name="first_aired" read_only="true" type="string"/>
+        <element label="URL" max_length="250" name="url" read_only="true" type="string"/>
+        <element choice="3" default="not_started" label="State" max_length="40" name="state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Not Started" sequence="100" value="not_started"/>
+                <element inactive_on_update="false" label="Currently Watching" sequence="300" value="currently_watching"/>
+                <element inactive_on_update="false" label="Paused Watching" sequence="200" value="paused_watching"/>
+                <element inactive_on_update="false" label="Finished Watching" sequence="400" value="finished_watching"/>
+            </choice>
+        </element>
+        <element default="0000-00-00 00:00:00" label="Due Date" max_length="40" name="due_date" type="due_date"/>
+        <element label="Show Image" max_length="65536" name="show_image" type="html"/>
+        <element label="Adult Content" max_length="10" name="adult_content" read_only="true" type="string"/>
+        <element label="Overview" max_length="10000" name="overview" read_only="true" type="string"/>
+        <element label="Video" max_length="40000" name="video" type="html"/>
+        <element choice="3" default="low" label="Urgency" max_length="40" name="urgency" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="High" sequence="300" value="high"/>
+                <element inactive_on_update="false" label="Low" sequence="100" value="low"/>
+                <element inactive_on_update="false" label="Medium" sequence="200" value="medium"/>
+            </choice>
+        </element>
+    </element>
+</database>

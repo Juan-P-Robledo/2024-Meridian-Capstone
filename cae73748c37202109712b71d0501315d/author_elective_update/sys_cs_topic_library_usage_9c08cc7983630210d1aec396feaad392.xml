@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_library_usage">
+    <sys_cs_topic_library_usage action="DELETE">
+        <calling_cs_topic_id display_value="Create Show Recommendations 2">b0767428c33202109712b71d050131b6</calling_cs_topic_id>
+        <library_cs_topic_id display_value="Pause">da36dc0f534e2010c232ddeeff7b12d4</library_cs_topic_id>
+        <library_usage>{"type":"LibraryCall","library_topic_name":"Pause","library_topic_id":"da36dc0f534e2010c232ddeeff7b12d4","library_topic_is_template":false,"parameter-mappings":[{"parameter-name":"seconds","value":{"type":"String","mode":"string","value":"5"},"metadata":{"type":"String","list":false,"items":[],"use_items":false}}],"return-value-mappings":[],"id":"f697cae413c84d15a219ee8a7e774250","name":"Pause","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"true"},"expert_mode":false}</library_usage>
+        <node_id>f697cae413c84d15a219ee8a7e774250</node_id>
+        <sys_class_name>sys_cs_topic_library_usage</sys_class_name>
+        <sys_created_by>oscar.vazquez</sys_created_by>
+        <sys_created_on>2024-07-22 15:11:46</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>9c08cc7983630210d1aec396feaad392</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_cs_topic_library_usage_9c08cc7983630210d1aec396feaad392</sys_update_name>
+        <sys_updated_by>oscar.vazquez</sys_updated_by>
+        <sys_updated_on>2024-07-22 15:11:46</sys_updated_on>
+    </sys_cs_topic_library_usage>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Shows">cae73748c37202109712b71d0501315d</application>
+        <file_path/>
+        <instance_id>7246842b1ba1c29832182f8dee4bcbeb</instance_id>
+        <instance_name>dev260561</instance_name>
+        <name>sys_cs_topic_library_usage_9c08cc7983630210d1aec396feaad392</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_library_usage"><sys_cs_topic_library_usage action="INSERT_OR_UPDATE"><calling_cs_topic_id display_value="Create Show Recommendations 2">b0767428c33202109712b71d050131b6</calling_cs_topic_id><library_cs_topic_id display_value="Pause">da36dc0f534e2010c232ddeeff7b12d4</library_cs_topic_id><library_usage>{"type":"LibraryCall","library_topic_name":"Pause","library_topic_id":"da36dc0f534e2010c232ddeeff7b12d4","library_topic_is_template":false,"parameter-mappings":[{"parameter-name":"seconds","value":{"type":"String","mode":"string","value":"5"},"metadata":{"type":"String","list":false,"items":[],"use_items":false}}],"return-value-mappings":[],"id":"f697cae413c84d15a219ee8a7e774250","name":"Pause","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"true"},"expert_mode":false}</library_usage><node_id>f697cae413c84d15a219ee8a7e774250</node_id><sys_class_name>sys_cs_topic_library_usage</sys_class_name><sys_created_by>oscar.vazquez</sys_created_by><sys_created_on>2024-07-22 15:11:46</sys_created_on><sys_domain>global</sys_domain><sys_id>9c08cc7983630210d1aec396feaad392</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package><sys_policy/><sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope><sys_update_name>sys_cs_topic_library_usage_9c08cc7983630210d1aec396feaad392</sys_update_name><sys_updated_by>oscar.vazquez</sys_updated_by><sys_updated_on>2024-07-22 15:11:46</sys_updated_on></sys_cs_topic_library_usage></record_update>]]></payload>
+        <payload_hash>-2120399227</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>4ae73748c37202109712b71d05013161</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>oscar.vazquez</sys_created_by>
+        <sys_created_on>2024-07-22 15:11:46</sys_created_on>
+        <sys_id>5808cc7983630210d1aec396feaad395</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190daffa99c0000001</sys_recorded_at>
+        <sys_updated_by>oscar.vazquez</sys_updated_by>
+        <sys_updated_on>2024-07-22 15:11:46</sys_updated_on>
+        <type>Topic Library Usage</type>
+        <update_guid>1c08cc79486302109858900e79223b94</update_guid>
+        <update_guid_history>1c08cc79486302109858900e79223b94:-2120399227</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>oscar.vazquez</sys_created_by>
+        <sys_created_on>2024-07-22 18:23:23</sys_created_on>
+        <sys_db_object display_value="" name="sys_cs_topic_library_usage">sys_cs_topic_library_usage</sys_db_object>
+        <sys_id>1bab731ba7344bb0857665661cff5664</sys_id>
+        <sys_metadata>9c08cc7983630210d1aec396feaad392</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_scope_delete display_value="">00a65963a1ca4dd880007d6948aaf8c4</sys_scope_delete>
+        <sys_update_name>sys_cs_topic_library_usage_9c08cc7983630210d1aec396feaad392</sys_update_name>
+        <sys_update_version display_value="sys_cs_topic_library_usage_9c08cc7983630210d1aec396feaad392">5808cc7983630210d1aec396feaad395</sys_update_version>
+        <sys_updated_by>oscar.vazquez</sys_updated_by>
+        <sys_updated_on>2024-07-22 18:23:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

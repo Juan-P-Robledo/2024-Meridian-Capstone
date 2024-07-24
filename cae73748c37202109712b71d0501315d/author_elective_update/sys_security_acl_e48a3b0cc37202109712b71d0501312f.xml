@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>true</advanced>
+        <condition/>
+        <description>Default access control on x_1435841_shows_show_recommendations</description>
+        <local_or_existing>Local</local_or_existing>
+        <name>x_1435841_shows_show_recommendations</name>
+        <operation display_value="write">write</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 15:34:50</sys_created_on>
+        <sys_id>e48a3b0cc37202109712b71d0501312f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1435841_shows_show_recommendations</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_security_acl_e48a3b0cc37202109712b71d0501312f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 15:34:50</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Shows">cae73748c37202109712b71d0501315d</application>
+        <file_path/>
+        <instance_id>7246842b1ba1c29832182f8dee4bcbeb</instance_id>
+        <instance_name>dev260561</instance_name>
+        <name>sys_security_acl_e48a3b0cc37202109712b71d0501312f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>true</advanced><condition/><description>Default access control on x_1435841_shows_show_recommendations</description><local_or_existing>Local</local_or_existing><name>x_1435841_shows_show_recommendations</name><operation display_value="write">write</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-06-10 15:34:50</sys_created_on><sys_id>e48a3b0cc37202109712b71d0501312f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1435841_shows_show_recommendations</sys_name><sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package><sys_policy/><sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope><sys_update_name>sys_security_acl_e48a3b0cc37202109712b71d0501312f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-06-10 15:34:50</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+        <payload_hash>1019620566</payload_hash>
+        <record_name>x_1435841_shows_show_recommendations</record_name>
+        <reverted_from/>
+        <source>4ae73748c37202109712b71d05013161</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 15:34:50</sys_created_on>
+        <sys_id>608a3b0cc37202109712b71d05013132</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19002c9b09e0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 15:34:50</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>648a3b0c8a7202100ac695c7f9921731</update_guid>
+        <update_guid_history>648a3b0c8a7202100ac695c7f9921731:1019620566</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 15:43:20</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>0b17b9034d3247749a7ce62276ff7090</sys_id>
+        <sys_metadata>e48a3b0cc37202109712b71d0501312f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1435841_shows_show_recommendations</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_parent display_value="">b08a3b0cc37202109712b71d0501313c</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_scope_delete display_value="">00a65963a1ca4dd880007d6948aaf8c4</sys_scope_delete>
+        <sys_update_name>sys_security_acl_e48a3b0cc37202109712b71d0501312f</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_e48a3b0cc37202109712b71d0501312f">608a3b0cc37202109712b71d05013132</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 15:43:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

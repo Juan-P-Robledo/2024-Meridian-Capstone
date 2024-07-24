@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_form_sections form_id="6a1856afc34302109712b71d050131db" sys_domain="global" table="x_1435841_shows_shows" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-03 15:39:21</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>761856afc34302109712b71d050131e0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1435841_shows_shows" name="x_1435841_shows_shows" sys_domain="global" view="Default view">6a1856afc34302109712b71d050131db</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_1435841_shows_shows" sys_domain="global" view="Default view">37650c98c3b202109712b71d0501316b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-03 15:39:21</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_1435841_shows_shows</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2024-07-03 15:39:20</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6a1856afc34302109712b71d050131db</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1435841_shows_shows</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+            <sys_update_name>sys_ui_form_sections_6a1856afc34302109712b71d050131db</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2024-07-03 15:39:20</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>
