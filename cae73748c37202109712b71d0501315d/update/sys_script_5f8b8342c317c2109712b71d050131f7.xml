@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1435841_shows_shows</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Populate Video</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+    var api_show_name = current.api_show_name;
+    gs.info('API Show Name: ' + api_show_name);
+
+    var yap = 'AIzaSyBtTPkxzaRVUGgrGelFB2OlgZh7pipVwuw';  // Ensure this is properly defined as a string
+
+    try {
+        var videoSearcher = new VideoSearcher(yap);
+        gs.info('VideoSearcher instance created.');
+
+        var responseBody = videoSearcher.searchTrailers(api_show_name);
+        gs.info('Search response received: ' + JSON.stringify(responseBody));
+
+        if (responseBody && responseBody.items && responseBody.items.length > 0) {
+            gs.info('Trailers found for: ' + api_show_name);
+            var trailers = responseBody.items;
+            var videoEmbedHtml = '';
+
+            for (var i = 0; i < trailers.length; i++) {
+                var trailer = trailers[i];
+                var videoId = trailer.id.videoId;
+
+                if (videoId) {
+                    gs.info('Video ID found: ' + videoId);
+                    videoEmbedHtml += '<iframe src="https://www.youtube.com/embed/' + videoId + '"></iframe><br>';
+                } else {
+                    gs.error('Video ID is null or undefined for one of the trailers.');
+                }
+            }
+
+            gs.info('Video Embed HTML: ' + videoEmbedHtml);
+
+            current.video = videoEmbedHtml;
+            current.show_test_details = JSON.stringify(responseBody);
+            gs.info('Updating current record with video embed HTML and response body.');
+            current.update();
+        } else {
+            gs.error('Error searching trailers or no trailers found for: ' + api_show_name);
+        }
+    } catch (e) {
+        gs.error('Exception occurred: ' + e.message);
+    }
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>26</sys_created_by>
+        <sys_created_on>2024-07-11 13:50:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5f8b8342c317c2109712b71d050131f7</sys_id>
+        <sys_mod_count>53</sys_mod_count>
+        <sys_name>Populate Video</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_script_5f8b8342c317c2109712b71d050131f7</sys_update_name>
+        <sys_updated_by>oscar.vazquez</sys_updated_by>
+        <sys_updated_on>2024-07-17 19:56:11</sys_updated_on>
+        <template/>
+        <when>async_always</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=5f8b8342c317c2109712b71d050131f7"/>
+</record_update>

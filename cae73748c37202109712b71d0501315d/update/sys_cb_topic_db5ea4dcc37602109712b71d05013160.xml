@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <autopilot_topic>false</autopilot_topic>
+        <category>7086c41cc3b202109712b71d050131e3</category>
+        <channels/>
+        <connect_queue/>
+        <context_profiles/>
+        <description>Allows the users to try and recommend shows to the Virtual Agent.</description>
+        <dialog_acts_enabled>false</dialog_acts_enabled>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <foundational>false</foundational>
+        <graph>{
+  "graph_api_version": "1.0.65",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "f5f1cb41b641401a97f4e40191b4228c": {
+          "id": "f5f1cb41b641401a97f4e40191b4228c",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Hi, I'm Virtual Agent and I'm in a huge dilemma. I need some shows to binge and I was wondering if you have any."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          }
+        },
+        "c8725e41fb7d4662ac5cc258e784aca4": {
+          "id": "c8725e41fb7d4662ac5cc258e784aca4",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          }
+        },
+        "8ff662822bdb4217ad85f45b83fbde4c": {
+          "id": "8ff662822bdb4217ad85f45b83fbde4c",
+          "stepType": "TextPrompt",
+          "name": "User Recommendations",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Got any cool show recommendations? "
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "416d95ba6bd7402aa393e3fff615b8aa",
+          "detailDescription": "",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          },
+          "requestFeedback": true
+        },
+        "525a111ddfd34abfb2fa62f36a9325e5": {
+          "id": "525a111ddfd34abfb2fa62f36a9325e5",
+          "stepType": "LookupRecord",
+          "name": "Check if Show exists",
+          "condition": {
+            "mode": "glide_query",
+            "value": "name_of_the_show={{vaInputs.user_recommendations}}^ORapi_show_name={{vaInputs.user_recommendations}}"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "variableId": "54c207723aaf4502b89786d23d65c823"
+        },
+        "a3e531e187d945f4b20ac603099a02d8": {
+          "id": "a3e531e187d945f4b20ac603099a02d8",
+          "stepType": "BooleanPrompt",
+          "name": "Recommend Another Show to User",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Would you like to recommend another show?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "b0c0593a15ec40afa8885586464281d8",
+          "detailDescription": ""
+        },
+        "938c2b10fb654d9eb7245f8d314791e0": {
+          "id": "938c2b10fb654d9eb7245f8d314791e0",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "a99d6c1493f243c6b61eeebefa75de06": {
+          "id": "a99d6c1493f243c6b61eeebefa75de06",
+          "stepType": "TextOutput",
+          "name": "Farewell",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Thank you for the recommendation(s)! See ya!"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "b56b5ee975da4a79b0a6b202d26fbc16"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "39305d3a86fa4882a8935252304f9bf5": {
+          "id": "39305d3a86fa4882a8935252304f9bf5",
+          "stepType": "Decision",
+          "name": "Does the Show Exist?"
+        },
+        "009a913810b449fdb0a296c8eebae973": {
+          "id": "009a913810b449fdb0a296c8eebae973",
+          "stepType": "TextOutput",
+          "name": "Response to already existing show",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.user_recommendations}}",
+                        "displayValue": "Input Variables➛User Recommendations"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": "?  I think you recommended me this show already... That's ok though!"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "c050c11628d14f9d9864f230e1196c8e"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "a2666b43ff3a40a8b972665ca0a332b6": {
+          "id": "a2666b43ff3a40a8b972665ca0a332b6",
+          "stepType": "RecordOutput",
+          "name": "Display Record",
+          "variableId": "8c0ec8c2c1744b6590b02f39bfb97d05",
+          "cardTemplate": "General",
+          "cardFields": {},
+          "mode": "variable",
+          "tableName": "x_1435841_shows_shows",
+          "fields": [
+            "api_show_name",
+            "overview",
+            "show_image"
+          ],
+          "cardDefinition": {
+            "name": "Record",
+            "value": "General"
+          },
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "condition": {
+            "mode": "glide_query",
+            "value": ""
+          }
+        },
+        "6ea129b570f84c11b34939b39e1bd8ba": {
+          "id": "6ea129b570f84c11b34939b39e1bd8ba",
+          "stepType": "CrudAction",
+          "name": "User Rec. Is Created",
+          "template": {
+            "query": {
+              "terms": [
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "name_of_the_show",
+                  "expression": "{{vaInputs.user_recommendations}}",
+                  "deserializedExpression": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "text": ""
+                        },
+                        {
+                          "type": "datapill",
+                          "dataPill": {
+                            "value": "{{vaInputs.user_recommendations}}",
+                            "displayValue": "Input Variables➛User Recommendations"
+                          },
+                          "children": [
+                            {
+                              "text": ""
+                            }
+                          ]
+                        },
+                        {
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "queryString": "name_of_the_show={{vaInputs.user_recommendations}}"
+          },
+          "mode": "create",
+          "record": "",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "attachments": [
+            {
+              "value": "",
+              "mode": "simple"
+            }
+          ],
+          "variableId": "8c0ec8c2c1744b6590b02f39bfb97d05"
+        },
+        "be2fffae086d40c7927148093aa0ff57": {
+          "id": "be2fffae086d40c7927148093aa0ff57",
+          "stepType": "Component",
+          "name": "pause",
+          "fields": [],
+          "reusableTopicId": "da36dc0f534e2010c232ddeeff7b12d4",
+          "reusableTopicChoice": "Pause",
+          "sourceType": "TOPIC_BLOCK",
+          "loading": false,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "inputs": {
+            "seconds": {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "5"
+                    }
+                  ]
+                }
+              ],
+              "mode": "string",
+              "type": "String"
+            }
+          },
+          "outputs": [],
+          "outdatedNote": false,
+          "variableIds": []
+        }
+      },
+      "edges": [
+        {
+          "id": "3e30b547c83a4f3cb11413e9f4cef3f2",
+          "edgeType": "Edge",
+          "source": "009a913810b449fdb0a296c8eebae973",
+          "target": "a99d6c1493f243c6b61eeebefa75de06",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "63200a5c42ae482aa1eab8e3b92c82f0",
+          "edgeType": "Branch",
+          "source": "39305d3a86fa4882a8935252304f9bf5",
+          "target": "009a913810b449fdb0a296c8eebae973",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.check_if_show_existsISNOTEMPTY",
+            "mode": "query"
+          },
+          "label": "it exists"
+        },
+        {
+          "id": "ea2c7a1ff6f547cda5609ba6e2e8a131",
+          "edgeType": "Branch",
+          "source": "938c2b10fb654d9eb7245f8d314791e0",
+          "target": "8ff662822bdb4217ad85f45b83fbde4c",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.recommend_another_show_to_user=true",
+            "mode": "query"
+          },
+          "label": "recommend again"
+        },
+        {
+          "id": "143c9be58077460bbfd17698b83d723f",
+          "edgeType": "Branch",
+          "source": "938c2b10fb654d9eb7245f8d314791e0",
+          "target": "a99d6c1493f243c6b61eeebefa75de06",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.recommend_another_show_to_user=false",
+            "mode": "query"
+          },
+          "label": "don't recommend"
+        },
+        {
+          "id": "952fee26df864946aca248ee1ddb62a8",
+          "edgeType": "Edge",
+          "source": "a2666b43ff3a40a8b972665ca0a332b6",
+          "target": "a3e531e187d945f4b20ac603099a02d8",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "2a3afffa85b64e80864777ec38f310e5",
+          "edgeType": "Edge",
+          "source": "f5f1cb41b641401a97f4e40191b4228c",
+          "target": "8ff662822bdb4217ad85f45b83fbde4c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "acc206a43542403fb066d27de8834330",
+          "edgeType": "Edge",
+          "source": "8ff662822bdb4217ad85f45b83fbde4c",
+          "target": "525a111ddfd34abfb2fa62f36a9325e5",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9de137cb435342a398c27f43cca248bd",
+          "edgeType": "Edge",
+          "source": "a3e531e187d945f4b20ac603099a02d8",
+          "target": "938c2b10fb654d9eb7245f8d314791e0",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7d11bb07d6bc4ccab1b884bd818df686",
+          "edgeType": "Edge",
+          "source": "a99d6c1493f243c6b61eeebefa75de06",
+          "target": "c8725e41fb7d4662ac5cc258e784aca4",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "6984fcb7116f475bb5caa0f4ab0dc087",
+          "edgeType": "Edge",
+          "source": "525a111ddfd34abfb2fa62f36a9325e5",
+          "target": "39305d3a86fa4882a8935252304f9bf5",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "60c2b688775346daa997f6acb0ebda04",
+          "edgeType": "Branch",
+          "source": "39305d3a86fa4882a8935252304f9bf5",
+          "target": "6ea129b570f84c11b34939b39e1bd8ba",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.check_if_show_existsISEMPTY",
+            "mode": "query"
+          },
+          "label": "doesn't exist"
+        },
+        {
+          "id": "7d1827da3a1141789ff939b424ca497d",
+          "edgeType": "Edge",
+          "source": "6ea129b570f84c11b34939b39e1bd8ba",
+          "target": "be2fffae086d40c7927148093aa0ff57",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9b938ce659b046cc937be2d4b457c478",
+          "edgeType": "Edge",
+          "source": "be2fffae086d40c7927148093aa0ff57",
+          "target": "a2666b43ff3a40a8b972665ca0a332b6",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "5b3ec263fa03419885dd69cf01f02084": {
+      "id": "5b3ec263fa03419885dd69cf01f02084",
+      "name": "LiveAgent_application",
+      "value": {
+        "mode": "simple",
+        "value": null
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "416d95ba6bd7402aa393e3fff615b8aa": {
+      "id": "416d95ba6bd7402aa393e3fff615b8aa",
+      "name": "user_recommendations",
+      "label": "User Recommendations",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTcxODExNjIyMjkwMiBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      },
+      "nodeId": "8ff662822bdb4217ad85f45b83fbde4c",
+      "isHidden": false
+    },
+    "54c207723aaf4502b89786d23d65c823": {
+      "id": "54c207723aaf4502b89786d23d65c823",
+      "name": "check_if_show_exists",
+      "label": "Check If Show Exists",
+      "varType": "reference",
+      "table": "x_1435841_shows_shows",
+      "category": "vaInputs",
+      "nodeId": "525a111ddfd34abfb2fa62f36a9325e5",
+      "isHidden": false
+    },
+    "b0c0593a15ec40afa8885586464281d8": {
+      "id": "b0c0593a15ec40afa8885586464281d8",
+      "name": "recommend_another_show_to_user",
+      "label": "Recommend Another Show To User",
+      "varType": "boolean",
+      "secure": false,
+      "category": "vaInputs",
+      "nodeId": "a3e531e187d945f4b20ac603099a02d8",
+      "isHidden": false
+    },
+    "8c0ec8c2c1744b6590b02f39bfb97d05": {
+      "id": "8c0ec8c2c1744b6590b02f39bfb97d05",
+      "name": "user_rec_is_created",
+      "label": "User Rec. Is Created",
+      "varType": "reference",
+      "table": "x_1435841_shows_shows",
+      "inactive": false,
+      "category": "vaInputs",
+      "nodeId": "6ea129b570f84c11b34939b39e1bd8ba",
+      "isHidden": false
+    }
+  }
+}</graph>
+        <key_phrases>Create Show Recommendations 2</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <model_type>nlu_keyword</model_type>
+        <modify_confirmation_enabled>false</modify_confirmation_enabled>
+        <name>Create Show Recommendations 2</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles/>
+        <root_topic_id/>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 19:21:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>db5ea4dcc37602109712b71d05013160</sys_id>
+        <sys_mod_count>46</sys_mod_count>
+        <sys_name>Create Show Recommendations 2</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_cb_topic_db5ea4dcc37602109712b71d05013160</sys_update_name>
+        <sys_updated_by>oscar.vazquez</sys_updated_by>
+        <sys_updated_on>2024-07-23 14:09:52</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+    </sys_cb_topic>
+    <sys_translated_text action="delete_multiple" query="documentkey=db5ea4dcc37602109712b71d05013160"/>
+</record_update>

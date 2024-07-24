@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application>Virtual Agent</application>
+        <code/>
+        <commented_message/>
+        <key>va:topic:db5ea4dcc37602109712b71d05013160:node:009a913810b449fdb0a296c8eebae973:field:0 {0}</key>
+        <language>en</language>
+        <message>{0}?  I think you recommended me this show already... That's ok though!</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>oscar.vazquez</sys_created_by>
+        <sys_created_on>2024-07-22 15:29:15</sys_created_on>
+        <sys_id>d40c48fd83630210d1aec396feaad3df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>va:topic:db5ea4dcc37602109712b71d05013160:node:009a913810b449fdb0a296c8eebae973:field:0 {0}</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_ui_message_d40c48fd83630210d1aec396feaad3df</sys_update_name>
+        <sys_updated_by>oscar.vazquez</sys_updated_by>
+        <sys_updated_on>2024-07-22 15:29:15</sys_updated_on>
+    </sys_ui_message>
+</record_update>

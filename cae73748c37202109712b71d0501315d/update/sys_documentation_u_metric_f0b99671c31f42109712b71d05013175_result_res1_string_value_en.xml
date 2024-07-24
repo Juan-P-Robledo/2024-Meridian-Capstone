@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="res1_string_value" label="Rating (0: despise, 1: strongly dislike, 2: dislike, 3: alright, 4: enjoy, 5: st" language="en" table="u_metric_f0b99671c31f42109712b71d05013175_result">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>res1_string_value</element>
+            <help/>
+            <hint/>
+            <label>Rating (0: despise, 1: strongly dislike, 2: dislike, 3: alright, 4: enjoy, 5: st</label>
+            <language>en</language>
+            <name>u_metric_f0b99671c31f42109712b71d05013175_result</name>
+            <plural>Rating (0: despise, 1: strongly dislike, 2: dislike, 3: alright, 4: enjoy, 5: st</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>26</sys_created_by>
+            <sys_created_on>2024-07-10 19:32:59</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Rating (0: despise, 1: strongly dislike, 2: dislike, 3: alright, 4: enjoy, 5: st</sys_name>
+            <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+            <sys_update_name>sys_documentation_u_metric_f0b99671c31f42109712b71d05013175_result_res1_string_value_en</sys_update_name>
+            <sys_updated_by>26</sys_updated_by>
+            <sys_updated_on>2024-07-10 19:32:59</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1435841_shows_shows</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Populate Info</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+var name_of_the_show = current.name_of_the_show; 
+var includeAdult = current.adult_content.toString();   
+var firstAired = current.first_aired.toString(); 
+	
+	var test = new ShowSearcher();
+    var responseBody = test.searchTVShows(name_of_the_show, includeAdult, firstAired);
+	
+
+    //var responseJSON = JSON.parse(responseBody);
+    if (responseBody.results && responseBody.results.length > 0) {
+        var showInfo = responseBody.results[0];
+		current.api_show_name = showInfo.name;
+        current.overview = showInfo.overview;
+        current.origin_country = showInfo.origin_country.join(', ');
+        current.url = 'https://www.themoviedb.org/tv/' + showInfo.id;
+		current.first_aired = showInfo.first_air_date;
+		current.adult_content = showInfo.adult;
+		current.show_image = showInfo.poster_path;
+		var imageUrl = 'https://image.tmdb.org/t/p/w500' + showInfo.poster_path;
+        current.show_image = '<img src="' + imageUrl + '" alt="Show Poster" style="width:50%; height:50%;">';
+/*
+		gs.info('Business Rule API First Aired Date: ' + current.first_aired);
+		gs.info('Business Rule API Name of the Show: ' + current.api_show_name);
+		gs.info('Business Rule API Adult Content (true or false): ' + current.adult_content);
+		gs.info('Business Rule API Overview: ' + current.overview);
+		gs.info('Business Rule API Origin Country: ' + current.origin_country);
+		gs.info('Business Rule API URL: ' + current.url);
+		gs.info('Business Rule API Photo path: ' + current.show_image);
+*/
+		current.show_test_details = JSON.stringify(showInfo);
+		current.update();
+    } else {
+        //gs.info('No results found in API response for show: ' + showName);
+    }
+})(current, previous);
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-01 16:30:33</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>896090cfc38302109712b71d05013141</sys_id>
+        <sys_mod_count>110</sys_mod_count>
+        <sys_name>Populate Info</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_script_896090cfc38302109712b71d05013141</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-15 19:31:17</sys_updated_on>
+        <template/>
+        <when>async_always</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=896090cfc38302109712b71d05013141"/>
+</record_update>

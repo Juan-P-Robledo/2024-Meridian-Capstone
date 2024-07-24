@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysevent_register">
+    <sysevent_register action="INSERT_OR_UPDATE">
+        <caller_access/>
+        <derived_priority>100</derived_priority>
+        <description>This event is fired for each overdue Show record</description>
+        <event_name>x_1435841_shows.overdueShows</event_name>
+        <fired_by>Scheduled Script Execution - Find Overdue Shows</fired_by>
+        <priority>100</priority>
+        <queue/>
+        <suffix>overdueShows</suffix>
+        <sys_class_name>sysevent_register</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-20 15:37:15</sys_created_on>
+        <sys_id>2e4a9b57c336c2109712b71d050131fa</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1435841_shows.overdueShows</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sysevent_register_2e4a9b57c336c2109712b71d050131fa</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-20 15:37:15</sys_updated_on>
+        <table>x_1435841_shows_shows</table>
+    </sysevent_register>
+</record_update>

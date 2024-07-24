@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1435841_shows.ShowSearcher</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>ShowSearcher</name>
+        <script><![CDATA[var ShowSearcher = Class.create();
+ShowSearcher.prototype = {
+	initialize: function(){},
+
+    searchTVShows: function(name_of_the_show,adult_content,first_aired) {
+		
+        var restMessage = new sn_ws.RESTMessageV2('Get Show Information', 'Default GET');
+        restMessage.setQueryParameter('query', name_of_the_show);
+        restMessage.setQueryParameter('include_adult', adult_content);
+		restMessage.setQueryParameter('first_air_date_year', first_aired);
+
+        var response = restMessage.execute();
+        var responseBody = response.getBody();
+        var httpStatus = response.getStatusCode();
+        
+		//gs.info('TMDB API Response: ' + responseBody);
+        //gs.info('HTTP Status: ' + httpStatus);
+
+        if (httpStatus == 200) {
+                var parsedResponse = JSON.parse(responseBody);
+                return parsedResponse;
+            } else {
+                //gs.error('Error searching TV shows: ' + responseBody);
+                return null;
+            }
+    },
+
+    type: 'ShowSearcher'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-07-01 16:29:03</sys_created_on>
+        <sys_id>69fe444fc38302109712b71d0501319b</sys_id>
+        <sys_mod_count>38</sys_mod_count>
+        <sys_name>ShowSearcher</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_script_include_69fe444fc38302109712b71d0501319b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-07-11 15:22:25</sys_updated_on>
+    </sys_script_include>
+</record_update>

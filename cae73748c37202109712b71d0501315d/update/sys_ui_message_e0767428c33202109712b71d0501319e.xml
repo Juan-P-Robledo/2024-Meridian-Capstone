@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application>Virtual Agent</application>
+        <code/>
+        <commented_message/>
+        <key>va:topic:db5ea4dcc37602109712b71d05013160:node:c8725e41fb7d4662ac5cc258e784aca4:field:confirmationmsg</key>
+        <language>en</language>
+        <message>Oh ok. Thanks for the recommendation(s)! I'll get started watching these shows right away!</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-11 14:35:11</sys_created_on>
+        <sys_id>e0767428c33202109712b71d0501319e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>va:topic:db5ea4dcc37602109712b71d05013160:node:c8725e41fb7d4662ac5cc258e784aca4:field:confirmationmsg</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_ui_message_e0767428c33202109712b71d0501319e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-11 14:35:11</sys_updated_on>
+    </sys_ui_message>
+</record_update>

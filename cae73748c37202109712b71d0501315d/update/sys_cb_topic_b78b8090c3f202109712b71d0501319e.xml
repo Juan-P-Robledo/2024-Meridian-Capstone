@@ -1,0 +1,848 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <autopilot_topic>false</autopilot_topic>
+        <category>7086c41cc3b202109712b71d050131e3</category>
+        <channels/>
+        <connect_queue/>
+        <context_profiles/>
+        <description>Allows the user to recommend shows to the VA.</description>
+        <dialog_acts_enabled>false</dialog_acts_enabled>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>false</flexible_conversation_switching>
+        <foundational>false</foundational>
+        <graph>{
+  "graph_api_version": "1.0.65",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "ed455307ce054f81a37f4b9a84a200b3": {
+          "id": "ed455307ce054f81a37f4b9a84a200b3",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Hi, I'm Virtual Agent and I'm in a huge dilemma. I need some shows to binge and I was wondering if you have any."
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          }
+        },
+        "dd0a2816c5f04942a8c610d0acc9a498": {
+          "id": "dd0a2816c5f04942a8c610d0acc9a498",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Oh ok. Thanks for the recommendation(s)! I'll get started watching these shows right away!"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          }
+        },
+        "b8b85736320c422d8647b24ec03beb9d": {
+          "id": "b8b85736320c422d8647b24ec03beb9d",
+          "stepType": "TextPrompt",
+          "name": "User Recommendations",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Got anything?!?!"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "145c84d1babe4dacbf77694279d5ce60",
+          "detailDescription": "",
+          "inputType": {
+            "format": "Text",
+            "script": ""
+          },
+          "requestFeedback": true
+        },
+        "a02dbda6c01347dfb7bd010320a62c90": {
+          "id": "a02dbda6c01347dfb7bd010320a62c90",
+          "stepType": "TextOutput",
+          "name": "User Confirmation",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.user_recommendations}}",
+                        "displayValue": "Input Variables➛User Recommendations"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": "? I think I've heard of it...."
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "1b51f9f7bf684dea87d7d5a4a5bcea2b"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "b1eb19c3e21745d1b59638f14f5687db": {
+          "id": "b1eb19c3e21745d1b59638f14f5687db",
+          "stepType": "BooleanPrompt",
+          "name": "User Attachment Options2",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Can you please show me an image of "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.user_recommendations}}",
+                      "displayValue": "Input Variables➛User Recommendations"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": " so I can get a better idea of what to expect? It's ok if you don't want to. "
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "40563f818b8946a5876592af74844652",
+          "detailDescription": ""
+        },
+        "aa92c42d32bb412988a2710156d742b5": {
+          "id": "aa92c42d32bb412988a2710156d742b5",
+          "stepType": "Decision",
+          "name": "User Attachment choice"
+        },
+        "91f330802a7d4c10adb3f607c1f6f638": {
+          "id": "91f330802a7d4c10adb3f607c1f6f638",
+          "stepType": "FilePrompt",
+          "name": "Image_show",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Go ahead and attach the image when you're ready! I'm excited to see what "
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.user_recommendations}}",
+                      "displayValue": "Input Variables➛User Recommendations"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": " has to offer!"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "052dfc4c66e445a6b5e477e0cc30cade",
+          "detailDescription": ""
+        },
+        "b6aa60bda0b746fc93c101605ef8ebad": {
+          "id": "b6aa60bda0b746fc93c101605ef8ebad",
+          "stepType": "BooleanPrompt",
+          "name": "NameShow Confirmation",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Is it actually called \""
+                  },
+                  {
+                    "type": "datapill",
+                    "dataPill": {
+                      "value": "{{vaInputs.user_recommendations}}",
+                      "displayValue": "Input Variables➛User Recommendations"
+                    },
+                    "children": [
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "text": "\"?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "de13dfdcc7fc4ff4bcf1f15714021aae",
+          "detailDescription": ""
+        },
+        "d7ac0030ba654d53bab7abed8a968f8a": {
+          "id": "d7ac0030ba654d53bab7abed8a968f8a",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "96700f4acf334c7aa2918b0747aa9aa9": {
+          "id": "96700f4acf334c7aa2918b0747aa9aa9",
+          "stepType": "TextOutput",
+          "name": "BotResponse1",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Aww, what!?!? So you just made that up? Please recommend me a good show, anime, sitcoms, I'll literally watch whatever!"
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "43a8f54d5864492c8b5b1ec04077a7df"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "24eee3650d3a433cb327b52c91844124": {
+          "id": "24eee3650d3a433cb327b52c91844124",
+          "stepType": "CrudAction",
+          "name": "NameOfShow",
+          "template": {
+            "query": {
+              "terms": [
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "name_of_the_show",
+                  "expression": "{{vaInputs.user_recommendations}}",
+                  "deserializedExpression": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "text": ""
+                        },
+                        {
+                          "type": "datapill",
+                          "dataPill": {
+                            "value": "{{vaInputs.user_recommendations}}",
+                            "displayValue": "Input Variables➛User Recommendations"
+                          },
+                          "children": [
+                            {
+                              "text": ""
+                            }
+                          ]
+                        },
+                        {
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "prefix": "",
+                  "operator": "=",
+                  "operand": "image_of_the_show",
+                  "expression": ""
+                }
+              ]
+            },
+            "queryString": "name_of_the_show={{vaInputs.user_recommendations}}^image_of_the_show="
+          },
+          "mode": "create",
+          "record": "",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "attachments": [
+            {
+              "value": "",
+              "mode": "simple"
+            }
+          ],
+          "variableId": "1ab6bbe2600b438099afbf3c39fa71dc"
+        },
+        "45efae35da1a4eb69d6d22d46f14be11": {
+          "id": "45efae35da1a4eb69d6d22d46f14be11",
+          "stepType": "CrudAction",
+          "name": "ImageOfShow",
+          "template": {},
+          "mode": "update",
+          "record": "",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "attachments": [
+            {
+              "value": "",
+              "mode": "simple"
+            }
+          ],
+          "variableId": "31fdc8a4ad154f2780db3eaad08f6d59"
+        },
+        "efa261eeb7dc418a99d5fcc06feaece0": {
+          "id": "efa261eeb7dc418a99d5fcc06feaece0",
+          "stepType": "TextOutput",
+          "name": "ImageConfirmation",
+          "secure": false,
+          "value": [
+            {
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Thanks! "
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaInputs.user_recommendations}}",
+                        "displayValue": "Input Variables➛User Recommendations"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": "looks like something that I'll binge for the next couple of days! "
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "_key": "cd81203adaf54202a0f2643b635b9017"
+            }
+          ],
+          "requestFeedback": true,
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        },
+        "18765a0fa28e42229b5572518dfd8a3c": {
+          "id": "18765a0fa28e42229b5572518dfd8a3c",
+          "stepType": "BooleanPrompt",
+          "name": "Recommend another show",
+          "prompt": {
+            "value": [
+              {
+                "type": "paragraph",
+                "children": [
+                  {
+                    "text": "Any other shows I should have on my radar?"
+                  }
+                ]
+              }
+            ],
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          },
+          "skippable": {
+            "value": "",
+            "mode": "query"
+          },
+          "skipReprompt": {
+            "value": "",
+            "mode": "query"
+          },
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "withNluUserInput": false,
+          "skipIfFulfilled": false,
+          "variableId": "f3e498fa2212425481efe4af66f6735c",
+          "detailDescription": ""
+        },
+        "82bec2a231ce492e8fcc5f152933f004": {
+          "id": "82bec2a231ce492e8fcc5f152933f004",
+          "stepType": "Decision",
+          "name": "Option to Recommend another show"
+        }
+      },
+      "edges": [
+        {
+          "id": "5861c2c97fef4a099e9f73863de54416",
+          "edgeType": "Edge",
+          "source": "24eee3650d3a433cb327b52c91844124",
+          "target": "aa92c42d32bb412988a2710156d742b5",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7604bc91ff0040ec80d894786f7994d8",
+          "edgeType": "Branch",
+          "source": "82bec2a231ce492e8fcc5f152933f004",
+          "target": "b8b85736320c422d8647b24ec03beb9d",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.recommend_another_show=true",
+            "mode": "query"
+          },
+          "label": "true"
+        },
+        {
+          "id": "86b40a1944e6429494615dff9533a696",
+          "edgeType": "Branch",
+          "source": "82bec2a231ce492e8fcc5f152933f004",
+          "target": "dd0a2816c5f04942a8c610d0acc9a498",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.recommend_another_show=false",
+            "mode": "query"
+          },
+          "label": "false"
+        },
+        {
+          "id": "619adf03487843dc9a28feecb2eb1dcf",
+          "edgeType": "Branch",
+          "source": "d7ac0030ba654d53bab7abed8a968f8a",
+          "target": "b1eb19c3e21745d1b59638f14f5687db",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.nameshow_confirmation=true",
+            "mode": "query"
+          },
+          "label": "true"
+        },
+        {
+          "id": "473bb89b7a1140f29d0adbe90154dcbf",
+          "edgeType": "Branch",
+          "source": "aa92c42d32bb412988a2710156d742b5",
+          "target": "dd0a2816c5f04942a8c610d0acc9a498",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.user_attachment_options2=",
+            "mode": "query"
+          },
+          "label": "No"
+        },
+        {
+          "id": "e3946c9687cb4397b1193ada6e0b7e22",
+          "edgeType": "Edge",
+          "source": "ed455307ce054f81a37f4b9a84a200b3",
+          "target": "b8b85736320c422d8647b24ec03beb9d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "df8c9ae6b84b41a49042a05a2db93776",
+          "edgeType": "Edge",
+          "source": "b8b85736320c422d8647b24ec03beb9d",
+          "target": "a02dbda6c01347dfb7bd010320a62c90",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "042ab7e776b64946b6dd7e64a25d58e3",
+          "edgeType": "Branch",
+          "source": "aa92c42d32bb412988a2710156d742b5",
+          "target": "91f330802a7d4c10adb3f607c1f6f638",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.user_attachment_options2=true",
+            "mode": "query"
+          },
+          "label": "Yes"
+        },
+        {
+          "id": "8fb7003ebb764838abf3fccb71b43ff5",
+          "edgeType": "Edge",
+          "source": "a02dbda6c01347dfb7bd010320a62c90",
+          "target": "b6aa60bda0b746fc93c101605ef8ebad",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "cd486f27639c40ea8aca94fb501729b2",
+          "edgeType": "Edge",
+          "source": "b6aa60bda0b746fc93c101605ef8ebad",
+          "target": "d7ac0030ba654d53bab7abed8a968f8a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5e6d77a6e6134f7ba90072985833c419",
+          "edgeType": "Branch",
+          "source": "d7ac0030ba654d53bab7abed8a968f8a",
+          "target": "96700f4acf334c7aa2918b0747aa9aa9",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": {
+            "value": "vaInputs.nameshow_confirmation=false",
+            "mode": "query"
+          },
+          "label": "false"
+        },
+        {
+          "id": "34419f670f544fdf9381ecb6218c1c1a",
+          "edgeType": "Edge",
+          "source": "96700f4acf334c7aa2918b0747aa9aa9",
+          "target": "b8b85736320c422d8647b24ec03beb9d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "393b56f00bb24d279528c7fa8b0a1855",
+          "edgeType": "Edge",
+          "source": "b1eb19c3e21745d1b59638f14f5687db",
+          "target": "24eee3650d3a433cb327b52c91844124",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "73fbdf0715684fa2a7409dd9cbd1bfa4",
+          "edgeType": "Edge",
+          "source": "91f330802a7d4c10adb3f607c1f6f638",
+          "target": "45efae35da1a4eb69d6d22d46f14be11",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "69547c1d808649ff8d5e55f6bc4be32d",
+          "edgeType": "Edge",
+          "source": "45efae35da1a4eb69d6d22d46f14be11",
+          "target": "efa261eeb7dc418a99d5fcc06feaece0",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "24dbb787cae0482a82e6dc678b0060d2",
+          "edgeType": "Edge",
+          "source": "efa261eeb7dc418a99d5fcc06feaece0",
+          "target": "18765a0fa28e42229b5572518dfd8a3c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e0995ae306894e51809a01563c77f60b",
+          "edgeType": "Edge",
+          "source": "18765a0fa28e42229b5572518dfd8a3c",
+          "target": "82bec2a231ce492e8fcc5f152933f004",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "0a26208a28224efda9ccd8b7ab8f6873": {
+      "id": "0a26208a28224efda9ccd8b7ab8f6873",
+      "name": "LiveAgent_application",
+      "value": {
+        "mode": "simple",
+        "value": null
+      },
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "current-user": {
+      "category": "vaInputs",
+      "id": "current-user",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "145c84d1babe4dacbf77694279d5ce60": {
+      "id": "145c84d1babe4dacbf77694279d5ce60",
+      "name": "user_recommendations",
+      "label": "User Recommendations",
+      "varType": "string",
+      "secure": false,
+      "category": "vaInputs",
+      "encryptionHashFunction": "SHA-256",
+      "encryptionSalt": {
+        "value": "MTcxODAzOTM2MTM5NCBWQSBEZXNpZ25lciBpcyBhd2Vzb21l",
+        "mode": "simple"
+      },
+      "nodeId": "b8b85736320c422d8647b24ec03beb9d",
+      "isHidden": false
+    },
+    "40563f818b8946a5876592af74844652": {
+      "id": "40563f818b8946a5876592af74844652",
+      "name": "user_attachment_options2",
+      "label": "User Attachment Options2",
+      "varType": "boolean",
+      "secure": false,
+      "category": "vaInputs",
+      "nodeId": "b1eb19c3e21745d1b59638f14f5687db",
+      "isHidden": false
+    },
+    "052dfc4c66e445a6b5e477e0cc30cade": {
+      "id": "052dfc4c66e445a6b5e477e0cc30cade",
+      "name": "image_show",
+      "label": "Image_show",
+      "varType": "image",
+      "secure": false,
+      "category": "vaInputs",
+      "nodeId": "91f330802a7d4c10adb3f607c1f6f638",
+      "isHidden": false
+    },
+    "de13dfdcc7fc4ff4bcf1f15714021aae": {
+      "id": "de13dfdcc7fc4ff4bcf1f15714021aae",
+      "name": "nameshow_confirmation",
+      "label": "NameShow Confirmation",
+      "varType": "boolean",
+      "secure": false,
+      "category": "vaInputs",
+      "nodeId": "b6aa60bda0b746fc93c101605ef8ebad",
+      "isHidden": false
+    },
+    "1ab6bbe2600b438099afbf3c39fa71dc": {
+      "id": "1ab6bbe2600b438099afbf3c39fa71dc",
+      "name": "nameofshow",
+      "label": "NameOfShow",
+      "varType": "reference",
+      "table": "x_1435841_shows_shows",
+      "inactive": false,
+      "category": "vaInputs",
+      "nodeId": "24eee3650d3a433cb327b52c91844124",
+      "isHidden": false
+    },
+    "31fdc8a4ad154f2780db3eaad08f6d59": {
+      "id": "31fdc8a4ad154f2780db3eaad08f6d59",
+      "name": "imageofshow",
+      "label": "ImageOfShow",
+      "varType": "reference",
+      "table": "",
+      "inactive": true,
+      "category": "vaInputs",
+      "nodeId": "45efae35da1a4eb69d6d22d46f14be11",
+      "isHidden": false
+    },
+    "f3e498fa2212425481efe4af66f6735c": {
+      "id": "f3e498fa2212425481efe4af66f6735c",
+      "name": "recommend_another_show",
+      "label": "Recommend Another Show",
+      "varType": "boolean",
+      "secure": false,
+      "category": "vaInputs",
+      "nodeId": "18765a0fa28e42229b5572518dfd8a3c",
+      "isHidden": false
+    }
+  }
+}</graph>
+        <key_phrases>Create Show Recommendations,I recommend,recommend,let me recommend you,I recommend watching,try watching,i loved watching,I liked this show called,I highly recommend,Why not watch?</key_phrases>
+        <library>false</library>
+        <live_agent>false</live_agent>
+        <model_type>nlu_keyword</model_type>
+        <modify_confirmation_enabled>false</modify_confirmation_enabled>
+        <name>Create Show Recommendations</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles/>
+        <root_topic_id/>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id/>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 16:49:19</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>b78b8090c3f202109712b71d0501319e</sys_id>
+        <sys_mod_count>25</sys_mod_count>
+        <sys_name>Create Show Recommendations</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_cb_topic_b78b8090c3f202109712b71d0501319e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 20:07:56</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>STANDARD</type>
+    </sys_cb_topic>
+    <sys_translated_text action="delete_multiple" query="documentkey=b78b8090c3f202109712b71d0501319e"/>
+</record_update>

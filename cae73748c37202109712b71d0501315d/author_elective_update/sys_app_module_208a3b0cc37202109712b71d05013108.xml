@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>true</active>
+        <application display_value="Show Recommendations">ec8a3b0cc37202109712b71d05013103</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Show Recommendations</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>x_1435841_shows_show_recommendations</name>
+        <order/>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <require_confirmation>true</require_confirmation>
+        <roles>x_1435841_shows.show_recommendations_user</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 15:34:50</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>208a3b0cc37202109712b71d05013108</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Show Recommendations</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_app_module_208a3b0cc37202109712b71d05013108</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 15:34:50</sys_updated_on>
+        <timeline_page/>
+        <title>Show Recommendations</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Shows">cae73748c37202109712b71d0501315d</application>
+        <file_path/>
+        <instance_id>7246842b1ba1c29832182f8dee4bcbeb</instance_id>
+        <instance_name>dev260561</instance_name>
+        <name>sys_app_module_208a3b0cc37202109712b71d05013108</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Show Recommendations">ec8a3b0cc37202109712b71d05013103</application><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>LIST</link_type><map_page/><mobile_title>Show Recommendations</mobile_title><mobile_view_name>Mobile</mobile_view_name><name>x_1435841_shows_show_recommendations</name><order/><override_menu_roles>false</override_menu_roles><query/><report/><require_confirmation>true</require_confirmation><roles>x_1435841_shows.show_recommendations_user</roles><sys_class_name>sys_app_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-06-10 15:34:50</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>208a3b0cc37202109712b71d05013108</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Show Recommendations</sys_name><sys_overrides/><sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package><sys_policy/><sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope><sys_update_name>sys_app_module_208a3b0cc37202109712b71d05013108</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-06-10 15:34:50</sys_updated_on><timeline_page/><title>Show Recommendations</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>821151163</payload_hash>
+        <record_name>Show Recommendations</record_name>
+        <reverted_from/>
+        <source>4ae73748c37202109712b71d05013161</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 15:34:50</sys_created_on>
+        <sys_id>a88a3b0cc37202109712b71d0501310b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19002c9ae260000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 15:34:50</sys_updated_on>
+        <type>Module</type>
+        <update_guid>6c8a3b0c04720210607f2d211206920a</update_guid>
+        <update_guid_history>6c8a3b0c04720210607f2d211206920a:821151163</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Show Recommendations">017c73ccc37202109712b71d05013132</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 15:43:20</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>1e977ff6a46648a29c908f992a9b3571</sys_id>
+        <sys_metadata>208a3b0cc37202109712b71d05013108</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Show Recommendations</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_scope_delete display_value="">00a65963a1ca4dd880007d6948aaf8c4</sys_scope_delete>
+        <sys_update_name>sys_app_module_208a3b0cc37202109712b71d05013108</sys_update_name>
+        <sys_update_version display_value="sys_app_module_208a3b0cc37202109712b71d05013108">a88a3b0cc37202109712b71d0501310b</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 15:43:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

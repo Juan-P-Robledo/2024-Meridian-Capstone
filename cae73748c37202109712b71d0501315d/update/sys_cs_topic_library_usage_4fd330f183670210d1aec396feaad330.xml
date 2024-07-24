@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_library_usage">
+    <sys_cs_topic_library_usage action="INSERT_OR_UPDATE">
+        <calling_cs_topic_id display_value="Create Show Recommendations 2">b0767428c33202109712b71d050131b6</calling_cs_topic_id>
+        <library_cs_topic_id display_value="Pause">da36dc0f534e2010c232ddeeff7b12d4</library_cs_topic_id>
+        <library_usage>{"type":"LibraryCall","library_topic_name":"Pause","library_topic_id":"da36dc0f534e2010c232ddeeff7b12d4","library_topic_is_template":false,"parameter-mappings":[{"parameter-name":"seconds","value":{"type":"String","mode":"string","value":"5"},"metadata":{"type":"String","list":false,"items":[],"use_items":false}}],"return-value-mappings":[],"id":"be2fffae086d40c7927148093aa0ff57","name":"pause","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"true"},"expert_mode":false}</library_usage>
+        <node_id>be2fffae086d40c7927148093aa0ff57</node_id>
+        <sys_class_name>sys_cs_topic_library_usage</sys_class_name>
+        <sys_created_by>oscar.vazquez</sys_created_by>
+        <sys_created_on>2024-07-22 18:23:23</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>4fd330f183670210d1aec396feaad330</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_cs_topic_library_usage_4fd330f183670210d1aec396feaad330</sys_update_name>
+        <sys_updated_by>oscar.vazquez</sys_updated_by>
+        <sys_updated_on>2024-07-22 18:23:23</sys_updated_on>
+    </sys_cs_topic_library_usage>
+</record_update>

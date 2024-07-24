@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="DELETE">
+        <active>true</active>
+        <application display_value="Show Recommendations">648a3b0cc37202109712b71d0501310c</application>
+        <filter/>
+        <name>Show Recommendations</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_1435841_shows.show_recommendations_user</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 15:34:50</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6c8a3b0cc37202109712b71d0501310f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Show Recommendations</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_ui_module_6c8a3b0cc37202109712b71d0501310f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 15:34:50</sys_updated_on>
+        <table>x_1435841_shows_show_recommendations</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Shows">cae73748c37202109712b71d0501315d</application>
+        <file_path/>
+        <instance_id>7246842b1ba1c29832182f8dee4bcbeb</instance_id>
+        <instance_name>dev260561</instance_name>
+        <name>sys_ui_module_6c8a3b0cc37202109712b71d0501310f</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module"><sys_ui_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="Show Recommendations">648a3b0cc37202109712b71d0501310c</application><filter/><name>Show Recommendations</name><order/><path/><path_relative_to_root>false</path_relative_to_root><roles>x_1435841_shows.show_recommendations_user</roles><sys_class_name>sys_ui_module</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-06-10 15:34:50</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>6c8a3b0cc37202109712b71d0501310f</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Show Recommendations</sys_name><sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package><sys_policy/><sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope><sys_update_name>sys_ui_module_6c8a3b0cc37202109712b71d0501310f</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-06-10 15:34:50</sys_updated_on><table>x_1435841_shows_show_recommendations</table><uncancelable>false</uncancelable><view_name/></sys_ui_module></record_update>]]></payload>
+        <payload_hash>-1838833294</payload_hash>
+        <record_name>Show Recommendations</record_name>
+        <reverted_from/>
+        <source>4ae73748c37202109712b71d05013161</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 15:34:50</sys_created_on>
+        <sys_id>e08a3b0cc37202109712b71d05013113</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19002c9af3d0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 15:34:50</sys_updated_on>
+        <type>Module</type>
+        <update_guid>a48a3b0c31720210c6567da616ae8b12</update_guid>
+        <update_guid_history>a48a3b0c31720210c6567da616ae8b12:-1838833294</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 15:43:22</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_module">sys_ui_module</sys_db_object>
+        <sys_id>006799bfea0a4dc4800180b45b606224</sys_id>
+        <sys_metadata>6c8a3b0cc37202109712b71d0501310f</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Show Recommendations</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_scope_delete display_value="">00a65963a1ca4dd880007d6948aaf8c4</sys_scope_delete>
+        <sys_update_name>sys_ui_module_6c8a3b0cc37202109712b71d0501310f</sys_update_name>
+        <sys_update_version display_value="sys_ui_module_6c8a3b0cc37202109712b71d0501310f">e08a3b0cc37202109712b71d05013113</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 15:43:22</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

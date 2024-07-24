@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language">
+    <sys_cs_topic_language action="DELETE">
+        <cs_topic_id display_value="_PRVW__2a035cd878f202101c6bf94755c406a8">2e035cd8c3f202109712b71d050131a9</cs_topic_id>
+        <language_code>en</language_code>
+        <nlu_entities>[]</nlu_entities>
+        <nlu_intent>Affirmative</nlu_intent>
+        <nlu_intent_label>Affirmative</nlu_intent_label>
+        <nlu_model>Setup_Topics_Model</nlu_model>
+        <nlu_model_label>Setup Topics Model</nlu_model_label>
+        <nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider>
+        <sys_class_name>sys_cs_topic_language</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 17:22:01</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>aa035cd8c3f202109712b71d050131af</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_cs_topic_language_aa035cd8c3f202109712b71d050131af</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 17:22:01</sys_updated_on>
+    </sys_cs_topic_language>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Shows">cae73748c37202109712b71d0501315d</application>
+        <file_path/>
+        <instance_id>7246842b1ba1c29832182f8dee4bcbeb</instance_id>
+        <instance_name>dev260561</instance_name>
+        <name>sys_cs_topic_language_aa035cd8c3f202109712b71d050131af</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cs_topic_language"><sys_cs_topic_language action="INSERT_OR_UPDATE"><cs_topic_id display_value="_PRVW__2a035cd878f202101c6bf94755c406a8">2e035cd8c3f202109712b71d050131a9</cs_topic_id><language_code>en</language_code><nlu_entities>[]</nlu_entities><nlu_intent>Affirmative</nlu_intent><nlu_intent_label>Affirmative</nlu_intent_label><nlu_model>Setup_Topics_Model</nlu_model><nlu_model_label>Setup Topics Model</nlu_model_label><nlu_provider>64c023c17300330021a044764df6a70e</nlu_provider><sys_class_name>sys_cs_topic_language</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2024-06-10 17:22:01</sys_created_on><sys_domain>global</sys_domain><sys_id>aa035cd8c3f202109712b71d050131af</sys_id><sys_mod_count>0</sys_mod_count><sys_name/><sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package><sys_policy/><sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope><sys_update_name>sys_cs_topic_language_aa035cd8c3f202109712b71d050131af</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2024-06-10 17:22:01</sys_updated_on></sys_cs_topic_language></record_update>]]></payload>
+        <payload_hash>-814815854</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>4ae73748c37202109712b71d05013161</source>
+        <source_table>sys_update_set</source_table>
+        <state>current</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 17:22:01</sys_created_on>
+        <sys_id>6e03141cc3f202109712b71d05013141</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>190032bcf2c0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 17:22:01</sys_updated_on>
+        <type>CS Topic Language</type>
+        <update_guid>2203141c9bf20210ca499abc0db14141</update_guid>
+        <update_guid_history>2203141c9bf20210ca499abc0db14141:-814815854</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-11 05:36:35</sys_created_on>
+        <sys_db_object display_value="" name="sys_cs_topic_language">sys_cs_topic_language</sys_db_object>
+        <sys_id>5bca04e62c6641eaa0f778d0419a83e4</sys_id>
+        <sys_metadata>aa035cd8c3f202109712b71d050131af</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_scope_delete display_value="">00a65963a1ca4dd880007d6948aaf8c4</sys_scope_delete>
+        <sys_update_name>sys_cs_topic_language_aa035cd8c3f202109712b71d050131af</sys_update_name>
+        <sys_update_version display_value="sys_cs_topic_language_aa035cd8c3f202109712b71d050131af">6e03141cc3f202109712b71d05013141</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-11 05:36:35</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

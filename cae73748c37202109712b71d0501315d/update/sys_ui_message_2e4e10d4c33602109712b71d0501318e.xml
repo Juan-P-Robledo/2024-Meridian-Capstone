@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application>Virtual Agent</application>
+        <code/>
+        <commented_message/>
+        <key>va:topic:b78b8090c3f202109712b71d0501319e:node:4ab12f9759fe489fa2f1db58f2294265:field:message {0}</key>
+        <language>en</language>
+        <message>Show me an image so I can get a better idea of {0}. It's ok if you don't want to attach an image by the way.</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-10 18:11:09</sys_created_on>
+        <sys_id>2e4e10d4c33602109712b71d0501318e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>va:topic:b78b8090c3f202109712b71d0501319e:node:4ab12f9759fe489fa2f1db58f2294265:field:message {0}</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_ui_message_2e4e10d4c33602109712b71d0501318e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-10 18:11:09</sys_updated_on>
+    </sys_ui_message>
+</record_update>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_grid_canvas_pane">
+    <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+        <grid_canvas display_value="New Tab 1">61bd8ad1c34302109712b71d05013111</grid_canvas>
+        <height>10</height>
+        <portal_widget display_value="Created 2024-06-26 08:56:56">9409ded1c38302109712b71d05013111</portal_widget>
+        <posx>0</posx>
+        <posy>0</posy>
+        <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2024-06-26 15:56:56</sys_created_on>
+        <sys_id>1809ded1c38302109712b71d05013113</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>61bd8ad1c34302109712b71d05013111</sys_name>
+        <sys_package display_value="Shows" source="x_1435841_shows">cae73748c37202109712b71d0501315d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Shows">cae73748c37202109712b71d0501315d</sys_scope>
+        <sys_update_name>sys_grid_canvas_pane_1809ded1c38302109712b71d05013113</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2024-06-26 15:56:56</sys_updated_on>
+        <width>12</width>
+    </sys_grid_canvas_pane>
+</record_update>
